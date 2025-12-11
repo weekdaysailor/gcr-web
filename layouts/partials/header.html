@@ -1,0 +1,36 @@
+<header class="site-header">
+    <div class="container">
+        <div class="header-content">
+            <div class="logo">
+                <a href="{{ "/" | relLangURL }}">
+                    <img src="{{ .Site.Params.logo }}" alt="{{ .Site.Title }}">
+                </a>
+            </div>
+            
+            <nav class="main-nav" id="main-nav">
+                <button class="nav-toggle" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <ul class="nav-menu">
+                    {{ range .Site.Menus.main }}
+                        {{ if not .Parent }}
+                        <li class="nav-item{{ if .HasChildren }} has-dropdown{{ end }}">
+                            <a href="{{ .URL }}" class="nav-link">{{ .Name }}</a>
+                            {{ if .HasChildren }}
+                            <ul class="dropdown-menu">
+                                {{ range .Children }}
+                                <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+                                {{ end }}
+                            </ul>
+                            {{ end }}
+                        </li>
+                        {{ end }}
+                    {{ end }}
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>

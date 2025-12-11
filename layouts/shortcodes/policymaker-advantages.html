@@ -1,0 +1,34 @@
+{{ $slides := slice
+    (dict "title" "Resolve Gridlock" "description" "Transforms cost-sharing disputes into market participation." "points" (slice "Countries contribute by GDP/emissions share" "Reward funding accessible to all verified mitigation providers" "Market pricing replaces tense burden negotiations"))
+    (dict "title" "Enable Ambition" "description" "Supports Paris-aligned pathways with science-based Risk Cost of Carbon (RCC) targets." "points" (slice "Mobilizes >US$3T annually without new taxes" "Reward multipliers link SDGs and climate metrics" "Supports national just-transition strategies"))
+    (dict "title" "Avoid Political Obstacles" "description" "Positive incentives sidestep carbon tax fatigue and debt concerns." "points" (slice "Central banks issue rewards, not treasuries" "No requirement for offsets or compliance markets" "Stimulates jobs + infrastructure while delivering mitigation"))
+    (dict "title" "Strengthen Equity" "description" "Reward Channel 3 delivers measurable co-benefit dividends." "points" (slice "Community wellbeing scores inform payouts" "Ecosystem indicators built into contracts" "Supports climate justice narratives and finance"))
+}}
+
+<div class="carousel-wrapper" data-carousel>
+    <button class="carousel-control prev" type="button" data-carousel-prev aria-label="Previous advantage">
+        &#10094;
+    </button>
+    <div class="carousel-track">
+        {{ range $slides }}
+        <article class="carousel-card">
+            <p class="carousel-kicker">Advantage</p>
+            <h3>{{ .title }}</h3>
+            <p>{{ .description }}</p>
+            <ul class="carousel-list">
+                {{ range .points }}
+                <li>{{ . }}</li>
+                {{ end }}
+            </ul>
+        </article>
+        {{ end }}
+    </div>
+    <button class="carousel-control next" type="button" data-carousel-next aria-label="Next advantage">
+        &#10095;
+    </button>
+    <div class="carousel-dots">
+        {{ range $index, $_ := $slides }}
+        <button type="button" class="carousel-dot{{ if eq $index 0 }} active{{ end }}" data-carousel-dot data-index="{{ $index }}" aria-label="Go to slide {{ add $index 1 }}"></button>
+        {{ end }}
+    </div>
+</div>

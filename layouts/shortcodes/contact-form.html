@@ -1,0 +1,74 @@
+{{ $params := .Site.Params.forms }}
+{{ $action := "" }}
+{{ if $params }}
+  {{ $action = $params.contactEndpoint }}
+{{ end }}
+{{ $method := "POST" }}
+{{ if $params.contactMethod }}
+  {{ $method = $params.contactMethod }}
+{{ end }}
+{{ $formEnabled := gt (len $action) 0 }}
+
+<div class="form-card contact-form-card">
+  {{ if $formEnabled }}
+  <form action="{{ $action }}" method="{{ $method }}" class="contact-form" data-form="contact">
+    <input type="hidden" name="form_name" value="gcr-contact" />
+    <input type="hidden" name="source_page" value="{{ .Page.RelPermalink }}" />
+    <div class="form-grid">
+      <label class="form-field">
+        <span>Full name*</span>
+        <input type="text" name="full_name" required placeholder="Your first and last name" />
+      </label>
+      <label class="form-field">
+        <span>Email*</span>
+        <input type="email" name="email" required placeholder="you@example.com" />
+      </label>
+      <label class="form-field">
+        <span>Organization</span>
+        <input type="text" name="organization" placeholder="Company, fund, or institution" />
+      </label>
+      <label class="form-field">
+        <span>Role</span>
+        <input type="text" name="role" placeholder="e.g., Partner, Policy Advisor" />
+      </label>
+      <label class="form-field">
+        <span>Phone (optional)</span>
+        <input type="tel" name="phone" placeholder="+1 555 123 4567" />
+      </label>
+      <label class="form-field">
+        <span>Topic*</span>
+        <select name="topic" required>
+          <option value="">Select a topic</option>
+          <option value="policy-briefing">Policy or economic briefing</option>
+          <option value="donor-investor">Donor or investor inquiry</option>
+          <option value="demonstration">Demonstration or partnership</option>
+          <option value="media">Media or speaking request</option>
+          <option value="general">General question</option>
+        </select>
+      </label>
+    </div>
+    <label class="form-field">
+      <span>Message*</span>
+      <textarea name="message" rows="6" required placeholder="Share a short overview, relevant timelines, and any materials we should review."></textarea>
+    </label>
+    <label class="form-consent">
+      <input type="checkbox" name="consent" required />
+      <span>I am at least 18 years old and agree that my submitted data may be stored by the Global Carbon Reward in accordance with the privacy policy.</span>
+    </label>
+    <div class="form-actions">
+      <button type="submit"
+              class="btn btn-primary"
+              data-analytics-event="contact_form_submit"
+              data-analytics-category="engagement"
+              data-analytics-label="contact_form">
+        Send Message
+      </button>
+      <p class="form-note">Prefer email? Write to <a href="mailto:info@globalcarbonreward.org">info@globalcarbonreward.org</a>.</p>
+    </div>
+  </form>
+  {{ else }}
+  <div class="form-disabled">
+    <p>The contact form is currently disabled. Add a submission endpoint to <code>params.forms.contactEndpoint</code> in <code>hugo.toml</code> to enable it, or email <a href="mailto:info@globalcarbonreward.org">info@globalcarbonreward.org</a>.</p>
+  </div>
+  {{ end }}
+</div>

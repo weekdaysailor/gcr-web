@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+    <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    {{ $logo := default "/images/gcr-logo.svg" .Site.Params.logo }}
+    {{ $logoAbs := $logo | absURL }}
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/css/main.css">
+    
+    {{ partial "analytics.html" . }}
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="{{ $logo }}">
+    <link rel="apple-touch-icon" href="{{ $logo }}">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="{{ .Title }}">
+    <meta property="og:description" content="{{ .Description }}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ .Permalink }}">
+    <meta property="og:image" content="{{ $logoAbs }}">
+    <meta property="og:image:alt" content="{{ .Site.Title }} logo">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="{{ $logoAbs }}">
+    <meta name="twitter:image:alt" content="{{ .Site.Title }} logo">
+</head>
+{{ $gaID := .Site.Params.googleAnalytics }}
+{{ $bodyClass := "" }}
+{{ if .IsHome }}{{ $bodyClass = "home" }}{{ end }}
+<body{{ if $bodyClass }} class="{{ $bodyClass }}"{{ end }}{{ if $gaID }} data-ga-id="{{ $gaID }}"{{ end }}>
+    {{ partial "header.html" . }}
+    
+    <main>
+        {{ block "main" . }}{{ end }}
+    </main>
+    
+    {{ partial "footer.html" . }}
+    
+    <script src="/js/main.js"></script>
+</body>
+</html>

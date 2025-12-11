@@ -1,0 +1,45 @@
+<svg width="240" height="240" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Global Carbon Reward logo</title>
+  <desc id="desc">A reboot symbol shaped like the letter C with a thermometer indicator surrounded by 17 colored leaves.</desc>
+  <defs>
+    <radialGradient id="bgGradient" cx="50%" cy="45%" r="70%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#dfe9f5"/>
+    </radialGradient>
+    <linearGradient id="cGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4da8ff"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="thermoGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffb347"/>
+      <stop offset="100%" stop-color="#ff2d55"/>
+    </linearGradient>
+    <path id="leaf" d="M0,-18 C6,-14 8,-6 6,0 C8,6 6,14 0,18 C-6,14 -8,6 -6,0 C-8,-6 -6,-14 0,-18 Z" stroke="white" stroke-opacity="0.65" stroke-width="1.6"/>
+  </defs>
+  <circle cx="120" cy="120" r="110" fill="url(#bgGradient)"/>
+  <circle cx="120" cy="120" r="92" fill="#f9fbff" stroke="#d4e3f4" stroke-width="2"/>
+  <g opacity="0.95">
+        <use href="#leaf" fill="#d22d2d" transform="translate(215.00,120.00) rotate(90.0) scale(0.8)" />
+        <use href="#leaf" fill="#d2672d" transform="translate(208.58,154.32) rotate(111.2) scale(0.8)" />
+        <use href="#leaf" fill="#d2a22d" transform="translate(190.21,184.00) rotate(132.4) scale(0.8)" />
+        <use href="#leaf" fill="#c9d22d" transform="translate(162.35,205.04) rotate(153.5) scale(0.8)" />
+        <use href="#leaf" fill="#8ed22d" transform="translate(128.77,214.59) rotate(174.7) scale(0.8)" />
+        <use href="#leaf" fill="#54d22d" transform="translate(94.00,211.37) rotate(195.9) scale(0.8)" />
+        <use href="#leaf" fill="#2dd240" transform="translate(62.75,195.81) rotate(217.1) scale(0.8)" />
+        <use href="#leaf" fill="#2dd27b" transform="translate(39.23,170.01) rotate(238.2) scale(0.8)" />
+        <use href="#leaf" fill="#2dd2b5" transform="translate(26.62,137.46) rotate(259.4) scale(0.8)" />
+        <use href="#leaf" fill="#2db5d2" transform="translate(26.62,102.54) rotate(280.6) scale(0.8)" />
+        <use href="#leaf" fill="#2d7bd2" transform="translate(39.23,69.99) rotate(301.8) scale(0.8)" />
+        <use href="#leaf" fill="#2d40d2" transform="translate(62.75,44.19) rotate(322.9) scale(0.8)" />
+        <use href="#leaf" fill="#542dd2" transform="translate(94.00,28.63) rotate(344.1) scale(0.8)" />
+        <use href="#leaf" fill="#8e2dd2" transform="translate(128.77,25.41) rotate(365.3) scale(0.8)" />
+        <use href="#leaf" fill="#c92dd2" transform="translate(162.35,34.96) rotate(386.5) scale(0.8)" />
+        <use href="#leaf" fill="#d22da2" transform="translate(190.21,56.00) rotate(407.6) scale(0.8)" />
+        <use href="#leaf" fill="#d22d67" transform="translate(208.58,85.68) rotate(428.8) scale(0.8)" />
+  </g>
+  <path d="M166 55 A70 70 0 1 0 166 185" fill="none" stroke="url(#cGradient)" stroke-width="18" stroke-linecap="round"/>
+  <line x1="184" y1="85" x2="184" y2="170" stroke="url(#cGradient)" stroke-width="18" stroke-linecap="round"/>
+  <line x1="165" y1="70" x2="165" y2="155" stroke="url(#thermoGradient)" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="165" cy="150" r="14" fill="url(#thermoGradient)" stroke="#fff" stroke-width="4"/>
+  <circle cx="120" cy="120" r="20" fill="#ffffff" stroke="#a7c7f9" stroke-width="4"/>
+</svg>

@@ -1,0 +1,137 @@
+baseURL = "https://globalcarbonreward.org/"
+languageCode = "en-us"
+title = "Global Carbon Reward"
+theme = ""  # We'll create custom theme
+
+[params]
+  description = "From climate gridlock to a regenerative financial system"
+  author = "Dr. Delton Chen"
+  email = "info@globalcarbonreward.org"
+  logo = "/images/gcr-logo.svg"
+  
+  [params.forms]
+    contactEndpoint = ""  # e.g., https://formspree.io/f/xyz
+    contactMethod = "POST"
+  
+  [params.donations]
+    paypalButtonId = "ED9Q54NH5AAMN"
+    paypalAccountEmail = "globalcarbon@inquiringsystems.org"
+    supportPhone = "+1 (707) 939-3900"
+    supportHoursUrl = "https://www.timeanddate.com/time/zone/usa/sonoma"
+    fiscalSponsor = "Inquiring Systems Inc. (ISI)"
+  
+  # Social media
+  twitter = ""
+  linkedin = ""
+  
+  # Features
+  googleAnalytics = "G-XXXXXXXXXX"  # Replace with your GA4 Measurement ID
+  
+[menu]
+  # About Section
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 1
+
+  [[menu.main]]
+    name = "Our Vision"
+    url = "/about/our-vision/"
+    parent = "about"
+    weight = 1
+
+  [[menu.main]]
+    name = "Our Mission"
+    url = "/about/our-mission/"
+    parent = "about"
+    weight = 2
+
+  [[menu.main]]
+    name = "Our Plan"
+    url = "/about/our-plan/"
+    parent = "about"
+    weight = 3
+
+  [[menu.main]]
+    name = "Founder's Message"
+    url = "/about/founders-message/"
+    parent = "about"
+    weight = 4
+
+  [[menu.main]]
+    name = "Our Logo"
+    url = "/about/our-logo/"
+    parent = "about"
+    weight = 5
+
+  # Rewards Section
+  [[menu.main]]
+    identifier = "rewards"
+    name = "Rewards"
+    url = "/rewards/"
+    weight = 2
+
+  [[menu.main]]
+    name = "Introduction"
+    url = "/rewards/introduction/"
+    parent = "rewards"
+    weight = 1
+
+  [[menu.main]]
+    name = "Policy Paper"
+    url = "/rewards/policy-paper/"
+    parent = "rewards"
+    weight = 2
+
+  # Audiences Section
+  [[menu.main]]
+    identifier = "audiences"
+    name = "Audiences"
+    url = "/audiences/"
+    weight = 3
+
+  [[menu.main]]
+    name = "For Economists"
+    url = "/audiences/economists/"
+    parent = "audiences"
+    weight = 1
+
+  [[menu.main]]
+    name = "For Business Leaders"
+    url = "/audiences/business-leaders/"
+    parent = "audiences"
+    weight = 2
+
+  [[menu.main]]
+    name = "For Policymakers"
+    url = "/audiences/policymakers/"
+    parent = "audiences"
+    weight = 3
+
+  [[menu.main]]
+    name = "For Investors"
+    url = "/audiences/investors/"
+    parent = "audiences"
+    weight = 4
+
+  # Other Sections
+  [[menu.main]]
+    name = "Presentations"
+    url = "/presentations/"
+    weight = 4
+
+  [[menu.main]]
+    name = "Contact"
+    url = "/contact/"
+    weight = 5
+
+  [[menu.main]]
+    name = "Donate"
+    url = "/donate/"
+    weight = 6
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true  # Allow HTML in markdown

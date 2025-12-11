@@ -1,0 +1,31 @@
+{{ define "main" }}
+<section class="page-hero">
+    <div class="container">
+        <h1>{{ .Title }}</h1>
+        {{ if .Description }}
+        <p class="page-description">{{ .Description }}</p>
+        {{ end }}
+    </div>
+</section>
+
+<article class="single-page">
+    <section class="page-content-section">
+        <div class="container">
+            <div class="page-content">
+                {{ .Content }}
+            </div>
+
+            {{ if .Params.downloads }}
+            <div class="downloads">
+                <h3>Downloads</h3>
+                <ul>
+                    {{ range .Params.downloads }}
+                    <li><a href="{{ .url }}" download>{{ .name }}</a></li>
+                    {{ end }}
+                </ul>
+            </div>
+            {{ end }}
+        </div>
+    </section>
+</article>
+{{ end }}

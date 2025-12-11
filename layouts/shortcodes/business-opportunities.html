@@ -1,0 +1,34 @@
+{{ $slides := slice
+    (dict "title" "Deploy Clean Energy" "description" "Earn XCR grants for replacing fossil baseload with clean generation that meets the Risk Cost of Carbon (RCC) guidance." "points" (slice "Utility-scale solar, wind, and geothermal buildouts" "Firming assets such as batteries and green hydrogen" "CCS retrofits that verify durable mitigation"))
+    (dict "title" "Decarbonize Operations" "description" "Unlock reward-backed cash flows for industrial process upgrades that slash Scope 1 and 2 emissions." "points" (slice "Low-carbon heat, electrified fleets, and process efficiency" "CCUS for cement, steel, and chemicals" "MRV-aligned supply chain optimization"))
+    (dict "title" "Remove Atmospheric CO₂" "description" "Generate tradable rewards for carbon removal platforms that achieve 100-year durability." "points" (slice "Direct air capture and BECCS portfolios" "Biochar, soil carbon, and enhanced weathering" "Blue carbon corridors for mangroves and seagrass"))
+    (dict "title" "Amplify Co-Benefits" "description" "Reward multipliers flow to projects that center wellbeing, resilience, and ecosystems." "points" (slice "Community dividend scoring via Reward Channel 3" "Health-positive building retrofits and social housing" "Nature-positive infrastructure and watershed restoration"))
+}}
+
+<div class="carousel-wrapper" data-carousel>
+    <button class="carousel-control prev" type="button" data-carousel-prev aria-label="Previous opportunity">
+        &#10094;
+    </button>
+    <div class="carousel-track">
+        {{ range $slides }}
+        <article class="carousel-card">
+            <p class="carousel-kicker">Opportunity</p>
+            <h3>{{ .title }}</h3>
+            <p>{{ .description }}</p>
+            <ul class="carousel-list">
+                {{ range .points }}
+                <li>{{ . }}</li>
+                {{ end }}
+            </ul>
+        </article>
+        {{ end }}
+    </div>
+    <button class="carousel-control next" type="button" data-carousel-next aria-label="Next opportunity">
+        &#10095;
+    </button>
+    <div class="carousel-dots">
+        {{ range $index, $_ := $slides }}
+        <button type="button" class="carousel-dot{{ if eq $index 0 }} active{{ end }}" data-carousel-dot data-index="{{ $index }}" aria-label="Go to slide {{ add $index 1 }}"></button>
+        {{ end }}
+    </div>
+</div>

@@ -1,0 +1,38 @@
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-content">
+            {{ $logo := default "/images/gcr-logo.svg" .Site.Params.logo }}
+            <div class="footer-brand">
+                <img src="{{ $logo }}" alt="{{ .Site.Title }} logo">
+                <p>{{ .Site.Title }}</p>
+                <span>{{ .Site.Params.description }}</span>
+            </div>
+            <div class="footer-section">
+                <h4>Partner</h4>
+                <p>We welcome enquiries and proposals to partner and collaborate.</p>
+                <a href="/contact/partner/" class="btn btn-outline">Partner</a>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Donate</h4>
+                <p>We appreciate your financial support.</p>
+                <a href="/donate/" class="btn btn-outline">Donate</a>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Email: {{ .Site.Params.email }}</p>
+                <a href="/contact/" class="btn btn-outline">Contact</a>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>
+                Delton Chen © {{ now.Year }} All Rights Reserved | 
+                <a href="https://www.inquiringsystems.org/">Inquiring Systems Inc</a> 501(c)(3) Fiscal Sponsor | 
+                <a href="/privacy-policy/">Privacy Policy</a> | 
+                <a href="/sitemap/">Sitemap</a>
+            </p>
+        </div>
+    </div>
+</footer>

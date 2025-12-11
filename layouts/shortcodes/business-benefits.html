@@ -1,0 +1,33 @@
+{{ $slides := slice
+    (dict "title" "Access to Capital" "description" "Tap debt-free financing that scales with verified mitigation outcomes." "points" (slice "XCR grants carry no repayment obligation" "Central bank-backed price floor ensures minimum value" "Immediate liquidity via FX trading or safekeeping accounts"))
+    (dict "title" "Competitive Advantage" "description" "Use the carbon reward to future-proof business models and stakeholder narratives." "points" (slice "First movers influence sectoral benchmarks and prize multipliers" "Reward-backed cash flows lower exposure to carbon taxes" "Transparent MRV elevates ESG and impact reporting"))
+    (dict "title" "Operational Flexibility" "description" "Design projects that match your portfolio without relying on offsets." "points" (slice "Performance-based rewards scale with actual impact" "Voluntary participation respects strategic planning cycles" "Reward Channel 3 aligns community and ecosystem KPIs"))
+}}
+
+<div class="carousel-wrapper" data-carousel>
+    <button class="carousel-control prev" type="button" data-carousel-prev aria-label="Previous benefit">
+        &#10094;
+    </button>
+    <div class="carousel-track">
+        {{ range $slides }}
+        <article class="carousel-card">
+            <p class="carousel-kicker">Benefit</p>
+            <h3>{{ .title }}</h3>
+            <p>{{ .description }}</p>
+            <ul class="carousel-list">
+                {{ range .points }}
+                <li>{{ . }}</li>
+                {{ end }}
+            </ul>
+        </article>
+        {{ end }}
+    </div>
+    <button class="carousel-control next" type="button" data-carousel-next aria-label="Next benefit">
+        &#10095;
+    </button>
+    <div class="carousel-dots">
+        {{ range $index, $_ := $slides }}
+        <button type="button" class="carousel-dot{{ if eq $index 0 }} active{{ end }}" data-carousel-dot data-index="{{ $index }}" aria-label="Go to slide {{ add $index 1 }}"></button>
+        {{ end }}
+    </div>
+</div>

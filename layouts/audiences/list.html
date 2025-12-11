@@ -1,0 +1,44 @@
+{{ define "main" }}
+<section class="page-hero audience-hero">
+    <div class="container">
+        <h1>{{ .Title }}</h1>
+        <p class="page-description">{{ .Description }}</p>
+    </div>
+</section>
+
+<section class="audience-selector">
+    <div class="container">
+        {{ .Content }}
+
+        <div class="audience-grid">
+            <a href="/audiences/economists/" class="audience-card">
+                <div class="audience-icon">📊</div>
+                <h3>For Economists</h3>
+                <p>Carbon pricing theory, macroeconomic impacts, and central bank mechanisms</p>
+                <span class="card-arrow">→</span>
+            </a>
+
+            <a href="/audiences/business-leaders/" class="audience-card">
+                <div class="audience-icon">💼</div>
+                <h3>For Business Leaders</h3>
+                <p>Investment opportunities, competitive advantage, and implementation pathways</p>
+                <span class="card-arrow">→</span>
+            </a>
+
+            <a href="/audiences/policymakers/" class="audience-card">
+                <div class="audience-icon">🏛️</div>
+                <h3>For Policymakers</h3>
+                <p>Legislative framework, international cooperation, and policy demonstrations</p>
+                <span class="card-arrow">→</span>
+            </a>
+
+            <a href="/audiences/investors/" class="audience-card">
+                <div class="audience-icon">📈</div>
+                <h3>For Investors</h3>
+                <p>Financial mechanisms, returns, and investment opportunities</p>
+                <span class="card-arrow">→</span>
+            </a>
+        </div>
+    </div>
+</section>
+{{ end }}

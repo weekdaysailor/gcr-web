@@ -1,0 +1,36 @@
+{{ $donations := .Site.Params.donations }}
+{{ $buttonId := "" }}
+{{ $accountEmail := "" }}
+{{ $supportPhone := "" }}
+{{ if $donations }}
+  {{ $buttonId = $donations.paypalButtonId }}
+  {{ $accountEmail = $donations.paypalAccountEmail }}
+  {{ $supportPhone = $donations.supportPhone }}
+{{ end }}
+{{ $formEnabled := gt (len $buttonId) 0 }}
+
+<div class="form-card donate-form-card">
+  {{ if $formEnabled }}
+  <form action="https://www.paypal.com/donate" method="post" target="_blank" class="donate-form" data-form="donate">
+    <input type="hidden" name="hosted_button_id" value="{{ $buttonId }}" />
+    <button type="submit"
+            class="btn btn-primary"
+            data-analytics-event="donate_cta_click"
+            data-analytics-category="donations"
+            data-analytics-label="paypal_button">
+      Donate with PayPal
+    </button>
+  </form>
+  {{ else }}
+  <div class="form-disabled">
+    <p>Set <code>params.donations.paypalButtonId</code> in <code>hugo.toml</code> to enable the PayPal donation button.</p>
+  </div>
+  {{ end }}
+
+  {{ if $accountEmail }}
+  <p class="donation-alt">Prefer to send funds manually? Use PayPal’s “Send money” option and direct your contribution to <strong>{{ $accountEmail }}</strong>.</p>
+  {{ end }}
+  {{ if $supportPhone }}
+  <p class="donation-alt">Need assistance? Call {{ $supportPhone }} for help with donations or receipts.</p>
+  {{ end }}
+</div>

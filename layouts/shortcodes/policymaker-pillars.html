@@ -1,0 +1,34 @@
+{{ $slides := slice
+    (dict "title" "Treaty-Ready Architecture" "description" "The carbon reward scales from voluntary climate clubs to a multilateral treaty framework." "points" (slice "International Carbon Exchange Authority oversees rules and MRV" "Countries choose demonstration scale and timing" "Risk Cost of Carbon (RCC) coordination aligns monetary and climate goals"))
+    (dict "title" "Central Bank Alliance" "description" "Monetary authorities defend the XCR price floor via CQE without issuing offsets or new government debt." "points" (slice "Mandates expand to climate risk management" "Interventions only occur when spot prices test the floor" "Supports financial stability during transition"))
+    (dict "title" "Preventive Insurance Principle" "description" "Pairs polluter-pays with positive incentives, avoiding political friction around new carbon taxes." "points" (slice "No direct fiscal cost to treasuries or taxpayers" "Rewards actual mitigation outcomes, not offsets" "Encourages broad stakeholder coalitions"))
+    (dict "title" "Transparent Verification" "description" "100-year durability contracts with independent MRV and clawbacks ensure accountability." "points" (slice "Reward Channel 3 ranks community + ecosystem co-benefits" "Satellite and ground data feed public registries" "Supports SDGs and equity metrics"))
+}}
+
+<div class="carousel-wrapper" data-carousel>
+    <button class="carousel-control prev" type="button" data-carousel-prev aria-label="Previous pillar">
+        &#10094;
+    </button>
+    <div class="carousel-track">
+        {{ range $slides }}
+        <article class="carousel-card">
+            <p class="carousel-kicker">Policy Pillar</p>
+            <h3>{{ .title }}</h3>
+            <p>{{ .description }}</p>
+            <ul class="carousel-list">
+                {{ range .points }}
+                <li>{{ . }}</li>
+                {{ end }}
+            </ul>
+        </article>
+        {{ end }}
+    </div>
+    <button class="carousel-control next" type="button" data-carousel-next aria-label="Next pillar">
+        &#10095;
+    </button>
+    <div class="carousel-dots">
+        {{ range $index, $_ := $slides }}
+        <button type="button" class="carousel-dot{{ if eq $index 0 }} active{{ end }}" data-carousel-dot data-index="{{ $index }}" aria-label="Go to slide {{ add $index 1 }}"></button>
+        {{ end }}
+    </div>
+</div>

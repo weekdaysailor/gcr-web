@@ -1,0 +1,37 @@
+{{ define "main" }}
+<section class="page-hero">
+    <div class="container">
+        <h1>{{ .Title }}</h1>
+        {{ if .Description }}
+        <p class="page-description">{{ .Description }}</p>
+        {{ end }}
+    </div>
+</section>
+
+<section class="page-content-section">
+    <div class="container">
+        {{ if .Content }}
+        <div class="page-intro">
+            {{ .Content }}
+        </div>
+        {{ end }}
+
+        {{ if .Pages }}
+        <div class="page-list">
+            {{ range .Pages }}
+            <article class="list-item">
+                <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+                {{ if .Description }}
+                <p class="item-description">{{ .Description }}</p>
+                {{ end }}
+                {{ if .Summary }}
+                <p class="item-summary">{{ .Summary }}</p>
+                {{ end }}
+                <a href="{{ .Permalink }}" class="btn btn-secondary">Read more →</a>
+            </article>
+            {{ end }}
+        </div>
+        {{ end }}
+    </div>
+</section>
+{{ end }}

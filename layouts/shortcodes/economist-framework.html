@@ -1,0 +1,34 @@
+{{ $slides := slice
+    (dict "title" "Systemic Externality Lens" "description" "Extends carbon pricing beyond Pigouvian taxes to address lock-in, tipping points, and financial contagion." "points" (slice "Separates social efficiency pricing from systemic safety pricing" "Introduces Class 1–4 risk taxonomy to guide policy selection" "Frames climate as market-and-system failure"))
+    (dict "title" "Preventive Insurance Principle" "description" "Pairs polluter-pays ('stick') with carbon rewards ('carrot') to insure against systemic damages." "points" (slice "XCR priced via the Risk Cost of Carbon (RCC) path and shadow price" "Rewards operate as a preventive insurance premium" "Aligns central bank mandates with climate stabilization"))
+    (dict "title" "Carbon-Balanced Agnostic Growth" "description" "Supports economic stability without fossil expansion by balancing conventional, carbon-negative, and fully electrified sectors." "points" (slice "Encourages structural shifts rather than forced degrowth" "Integrates with Van den Bergh’s agnostic growth concept" "Links monetary design to long-run productivity"))
+    (dict "title" "Carbon Exchange Authority" "description" "Introduces a quasi-fiscal institution overseeing reward issuance, MRV, and 100-year durability contracts." "points" (slice "Administers Reward Channels 1–3" "Coordinates with central banks via CQE" "Manages milestones, clawbacks, and co-benefit scoring"))
+}}
+
+<div class="carousel-wrapper" data-carousel>
+    <button class="carousel-control prev" type="button" data-carousel-prev aria-label="Previous concept">
+        &#10094;
+    </button>
+    <div class="carousel-track">
+        {{ range $slides }}
+        <article class="carousel-card">
+            <p class="carousel-kicker">Framework</p>
+            <h3>{{ .title }}</h3>
+            <p>{{ .description }}</p>
+            <ul class="carousel-list">
+                {{ range .points }}
+                <li>{{ . }}</li>
+                {{ end }}
+            </ul>
+        </article>
+        {{ end }}
+    </div>
+    <button class="carousel-control next" type="button" data-carousel-next aria-label="Next concept">
+        &#10095;
+    </button>
+    <div class="carousel-dots">
+        {{ range $index, $_ := $slides }}
+        <button type="button" class="carousel-dot{{ if eq $index 0 }} active{{ end }}" data-carousel-dot data-index="{{ $index }}" aria-label="Go to slide {{ add $index 1 }}"></button>
+        {{ end }}
+    </div>
+</div>

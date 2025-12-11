@@ -1,0 +1,34 @@
+{{ $slides := slice
+    (dict "title" "Direct Reward Streams" "description" "Finance mitigation projects and receive XCR grants as projects clear MRV milestones." "points" (slice "Debt-free cash flows indexed to verified performance" "Stackable with blended finance and carbon removal prepayments" "Optimized for project finance, infra equity, and PE structures"))
+    (dict "title" "Secondary Market Gains" "description" "Trade XCR in FX markets to capture appreciation as demand accelerates." "points" (slice "Benefit from tightening Risk Cost of Carbon (RCC) targets" "Use price floor for structured notes and options" "Create market-making businesses around liquidity provision"))
+    (dict "title" "Portfolio Diversification" "description" "Incorporate XCR into multi-asset strategies as a low-correlation, real-economy hedge." "points" (slice "Counter-cyclical behavior during climate shocks" "Supports ESG, impact, and Article 9 mandates" "Reduces transition risk exposure in high-emitting portfolios"))
+    (dict "title" "Climate Hedge" "description" "XCR valuations rise when mitigation demand outpaces supply, providing a hedge against policy and physical risk." "points" (slice "Acts as preventive insurance aligned with macro climate policy" "Complements renewable and storage allocations" "Signals credible decarbonization commitments to stakeholders"))
+}}
+
+<div class="carousel-wrapper" data-carousel>
+    <button class="carousel-control prev" type="button" data-carousel-prev aria-label="Previous return">
+        &#10094;
+    </button>
+    <div class="carousel-track">
+        {{ range $slides }}
+        <article class="carousel-card">
+            <p class="carousel-kicker">Return Driver</p>
+            <h3>{{ .title }}</h3>
+            <p>{{ .description }}</p>
+            <ul class="carousel-list">
+                {{ range .points }}
+                <li>{{ . }}</li>
+                {{ end }}
+            </ul>
+        </article>
+        {{ end }}
+    </div>
+    <button class="carousel-control next" type="button" data-carousel-next aria-label="Next return">
+        &#10095;
+    </button>
+    <div class="carousel-dots">
+        {{ range $index, $_ := $slides }}
+        <button type="button" class="carousel-dot{{ if eq $index 0 }} active{{ end }}" data-carousel-dot data-index="{{ $index }}" aria-label="Go to slide {{ add $index 1 }}"></button>
+        {{ end }}
+    </div>
+</div>
