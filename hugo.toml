@@ -1,7 +1,7 @@
 baseURL = "https://globalcarbonreward.org/"
 languageCode = "en-us"
 title = "Global Carbon Reward"
-theme = ""  # We'll create custom theme
+# No theme module; we rely entirely on the custom layouts in /layouts.
 
 [params]
   description = "From climate gridlock to a regenerative financial system"
