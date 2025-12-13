@@ -189,7 +189,7 @@ body::after {
         url("/images/nature-texture.svg");
     background-size: 140% 140%, 120% 120%, 320px 320px;
     background-repeat: no-repeat, no-repeat, repeat;
-    opacity: 0.55;
+    opacity: 0.32;
     z-index: 0;
 }
 
@@ -198,7 +198,7 @@ body::after {
     position: absolute;
     inset: 3px;
     border-radius: calc(var(--card-radius) - 6px);
-    border: 1px solid rgba(255,255,255,0.7);
+    border: 1px solid rgba(255,255,255,0.85);
     pointer-events: none;
 }
 
@@ -469,20 +469,20 @@ a:hover { color: var(--primary-color); text-decoration: underline; }
 
 /* Info Sections */
 .info-section {
-    background: rgba(255,255,255,0.93);
+    background: rgba(255,255,255,0.98);
     border-radius: var(--card-radius);
     border: none;
     box-shadow: none;
     position: relative;
     z-index: 1;
-    background-image: radial-gradient(circle at 20% 15%, rgba(121, 180, 115, 0.12), transparent 55%),
+    background-image: radial-gradient(circle at 20% 15%, rgba(121, 180, 115, 0.08), transparent 55%),
                       url("/images/nature-texture.svg");
     background-repeat: no-repeat, repeat;
     background-size: 160% 160%, 420px 420px;
 }
 
 .info-section--muted {
-    background-color: rgba(239, 246, 240, 0.95);
+    background-color: rgba(239, 246, 240, 0.98);
 }
 
 .info-grid {
