@@ -434,19 +434,10 @@ a:hover { color: var(--primary-color); text-decoration: underline; }
     margin: 2rem 0 1.5rem;
 }
 
-.btn-tertiary {
-    border: 1px solid rgba(3, 27, 44, 0.2);
-    padding: 0.85rem 1.5rem;
-    border-radius: 999px;
-    font-weight: 600;
-    color: var(--deep-ocean);
-    background: transparent;
-    transition: border-color var(--transition-speed), color var(--transition-speed);
-}
-
-.btn-tertiary:hover {
-    border-color: var(--deep-ocean);
-    color: var(--primary-color);
+@media (min-width: 900px) {
+    .hero-buttons {
+        flex-wrap: nowrap;
+    }
 }
 
 .hero-highlights {
@@ -928,6 +919,21 @@ section.home-card {
 
 .btn-secondary:hover {
     background: var(--blue-hover);
+    text-decoration: none;
+}
+
+.btn.btn-tertiary {
+    border-radius: 4px;
+    color: var(--deep-ocean);
+    background: var(--sunrise);
+    border-color: var(--sunrise);
+    box-shadow: 0 8px 18px rgba(245, 196, 124, 0.3);
+}
+
+.btn.btn-tertiary:hover {
+    background: #f3b862;
+    border-color: #f3b862;
+    color: var(--deep-ocean);
     text-decoration: none;
 }
 
