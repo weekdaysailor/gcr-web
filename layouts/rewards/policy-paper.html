@@ -1,0 +1,123 @@
+{{ define "main" }}
+<section class="policy-hero home-card">
+    <div class="container policy-hero__grid">
+        <div class="policy-hero__content">
+            {{ with .Params.event_intro }}<p class="policy-eyebrow">{{ . }}</p>{{ end }}
+            <h1>{{ .Params.event_title | default .Title }}</h1>
+            {{ with .Params.event_details }}<p class="policy-event">{{ . }}</p>{{ end }}
+            {{ with .Params.hero_excerpt }}<p class="policy-lede">{{ . }}</p>{{ end }}
+            {{ with .Params.presenter }}
+            <p class="policy-presenter">Presenter:
+                {{ if .url }}<a href="{{ .url }}" target="_blank" rel="noopener">{{ .name }}</a>{{ else }}{{ .name }}{{ end }}
+            </p>
+            {{ end }}
+            <div class="policy-hero__ctas">
+                {{ with .Params.cta_primary_url }}
+                <a class="btn btn-primary" href="{{ . }}" target="_blank" rel="noopener">
+                    {{ $.Params.cta_primary_label | default "Download Paper" }}
+                </a>
+                {{ end }}
+                {{ with .Params.cta_secondary_url }}
+                <a class="btn btn-secondary" href="{{ . }}" target="_blank" rel="noopener">
+                    {{ $.Params.cta_secondary_label | default "Learn more" }}
+                </a>
+                {{ end }}
+            </div>
+        </div>
+        <div class="policy-hero__gallery">
+            {{ with .Params.hero_primary_image }}
+            <div class="policy-hero__frame policy-hero__frame--primary" style="background-image:url('{{ . }}');">
+                {{ with $.Params.hero_badge }}<span>{{ . }}</span>{{ end }}
+            </div>
+            {{ end }}
+            {{ with .Params.hero_secondary_image }}
+            <div class="policy-hero__frame policy-hero__frame--secondary" style="background-image:url('{{ . }}');"></div>
+            {{ end }}
+        </div>
+    </div>
+</section>
+
+<section class="policy-announcement home-card">
+    <div class="container policy-announcement__grid">
+        <article>
+            {{ with .Params.announcement_heading }}<p class="policy-eyebrow">{{ . }}</p>{{ end }}
+            {{ with .Params.announcement_body }}<p>{{ . }}</p>{{ end }}
+            {{ with .Params.press_email }}
+            <p class="policy-press-email">Press: <a href="mailto:{{ . }}">{{ . }}</a></p>
+            {{ end }}
+        </article>
+        <article>
+            {{ with .Params.about_paper_title }}<p class="policy-eyebrow">{{ . }}</p>{{ end }}
+            {{ with .Params.about_paper_subtitle }}<h2>{{ . }}</h2>{{ end }}
+            {{ with .Params.about_paper_body }}<p>{{ . }}</p>{{ end }}
+            {{ with .Params.distributed_by }}
+            <ul class="policy-distribution">
+                {{ range . }}
+                <li><span>{{ .name }}:</span> <a href="{{ .url }}" target="_blank" rel="noopener">{{ .url }}</a></li>
+                {{ end }}
+            </ul>
+            {{ end }}
+        </article>
+    </div>
+</section>
+
+<section class="policy-spotlight home-card">
+    <div class="container policy-spotlight__grid">
+        <figure>
+            {{ $coverLink := .Params.cta_primary_url }}
+            {{ if $coverLink }}<a href="{{ $coverLink }}" target="_blank" rel="noopener">{{ end }}
+            {{ with .Params.cover_image }}<img src="{{ . }}" alt="Carbon Reward Policy cover">{{ end }}
+            {{ if $coverLink }}</a>{{ end }}
+            {{ with .Params.cover_caption }}<figcaption>{{ . }}</figcaption>{{ end }}
+        </figure>
+        <div class="policy-spotlight__summary">
+            {{ with .Params.research_summary }}<p>{{ . }}</p>{{ end }}
+            <div class="policy-spotlight__media">
+                {{ with .Params.amazon_image }}
+                <img src="{{ . }}" alt="Amazon rainforest">
+                {{ end }}
+                {{ with .Params.amazon_caption }}<p>{{ . }}</p>{{ end }}
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="policy-substack home-card">
+    <div class="container policy-substack__wrap">
+        <div>
+            <h3>Substack: Join the Conversation</h3>
+            {{ with .Params.substack_url }}
+            <a class="btn btn-tertiary" href="{{ . }}" target="_blank" rel="noopener">{{ . }}</a>
+            {{ end }}
+        </div>
+        {{ with .Params.substack_logo }}
+        <div class="policy-substack__logo">
+            <img src="{{ . }}" alt="The Chen Papers">
+        </div>
+        {{ end }}
+    </div>
+</section>
+
+{{ with .Params.videos }}
+<section class="policy-videos home-card">
+    <div class="container policy-videos__grid">
+        {{ range . }}
+        <div class="policy-video">
+            <div class="policy-video__frame">
+                <iframe src="{{ .url }}" title="{{ .title }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <p>{{ .title }}</p>
+        </div>
+        {{ end }}
+    </div>
+</section>
+{{ end }}
+
+{{ if .Content }}
+<section class="policy-content home-card">
+    <div class="container">
+        {{ .Content }}
+    </div>
+</section>
+{{ end }}
+{{ end }}
