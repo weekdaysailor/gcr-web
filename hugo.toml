@@ -71,71 +71,80 @@ title = "Global Carbon Reward"
     parent = "about"
     weight = 6
 
-  # Rewards Section
+  # The Policy Section (formerly Rewards)
   [[menu.main]]
-    identifier = "rewards"
-    name = "Rewards"
+    identifier = "policy"
+    name = "The Policy"
     url = "/rewards/"
     weight = 2
 
   [[menu.main]]
     name = "Introduction"
     url = "/rewards/introduction/"
-    parent = "rewards"
+    parent = "policy"
     weight = 1
 
   [[menu.main]]
     name = "Policy Paper"
     url = "/rewards/policy-paper/"
-    parent = "rewards"
+    parent = "policy"
     weight = 2
 
-  # Audiences Section
+  # Why It Matters Section (formerly Audiences)
   [[menu.main]]
-    identifier = "audiences"
-    name = "Audiences"
+    identifier = "why-it-matters"
+    name = "Why It Matters"
     url = "/audiences/"
     weight = 3
 
   [[menu.main]]
     name = "For Economists"
     url = "/audiences/economists/"
-    parent = "audiences"
+    parent = "why-it-matters"
     weight = 1
 
   [[menu.main]]
     name = "For Business Leaders"
     url = "/audiences/business-leaders/"
-    parent = "audiences"
+    parent = "why-it-matters"
     weight = 2
 
   [[menu.main]]
     name = "For Policymakers"
     url = "/audiences/policymakers/"
-    parent = "audiences"
+    parent = "why-it-matters"
     weight = 3
 
   [[menu.main]]
     name = "For Investors"
     url = "/audiences/investors/"
-    parent = "audiences"
+    parent = "why-it-matters"
     weight = 4
 
-  # Other Sections
+  # Presentations
   [[menu.main]]
     name = "Presentations"
     url = "/presentations/"
     weight = 4
 
+  # Get Involved Section
   [[menu.main]]
-    name = "Contact"
+    identifier = "get-involved"
+    name = "Get Involved"
     url = "/contact/"
     weight = 5
 
   [[menu.main]]
+    name = "Contact"
+    url = "/contact/"
+    parent = "get-involved"
+    weight = 1
+
+  [[menu.main]]
     name = "Donate"
     url = "/donate/"
-    weight = 6
+    parent = "get-involved"
+    weight = 2
 
 [markup]
   [markup.goldmark]
