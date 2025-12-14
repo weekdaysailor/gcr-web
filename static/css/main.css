@@ -535,9 +535,9 @@ a:hover { color: var(--primary-color); text-decoration: underline; }
 }
 
 .cycle-node--top { top: -25px; left: 50%; transform: translateX(-50%); }
-.cycle-node--right { right: -35px; top: 50%; transform: translateY(-50%); }
+.cycle-node--right { top: 15%; right: -45px; transform: none; }
 .cycle-node--bottom { bottom: -25px; left: 50%; transform: translateX(-50%); }
-.cycle-node--left { left: -40px; top: 50%; transform: translateY(-50%); }
+.cycle-node--left { top: 15%; left: -75px; transform: none; }
 
 .dual-list {
     display: grid;
