@@ -24,6 +24,6 @@ The final milestone emphasizes outreach through documentaries, conferences, and 
 
 ## Project Phases Timeline
 
-- **Phase I (2014-2020):** Policy research and publications
-- **Phase II (2021-2025):** Development including organizational planning, partnerships, stakeholder workshops, demonstration implementation, and treaty discussions
-- **Phase III (Post-2025):** International treaty proposal for global emissions reductions
+- **Phase I (2014-2025):** Policy research and publications
+- **Phase II (2026-2028):** Development including organizational planning, partnerships, stakeholder workshops, demonstration implementation, and treaty discussions
+- **Phase III (Post-2028):** International treaty proposal for global emissions reductions
