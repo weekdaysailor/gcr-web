@@ -60,10 +60,16 @@ title = "Global Carbon Reward"
     weight = 4
 
   [[menu.main]]
+    name = "Our Team"
+    url = "/about/our-team/"
+    parent = "about"
+    weight = 5
+
+  [[menu.main]]
     name = "Our Logo"
     url = "/about/our-logo/"
     parent = "about"
-    weight = 5
+    weight = 6
 
   # Rewards Section
   [[menu.main]]
