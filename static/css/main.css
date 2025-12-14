@@ -1235,6 +1235,8 @@ main > section:first-of-type.home-card {
     box-shadow: 0 16px 40px rgba(3, 27, 44, 0.08);
     padding: 2rem;
     margin-top: 1.5rem;
+    position: relative;
+    z-index: 1;
 }
 
 .form-grid {
@@ -1848,7 +1850,8 @@ main > section:first-of-type.home-card {
         content: none;
     }
 
-    .has-dropdown:hover .dropdown-menu {
+    .has-dropdown:hover .dropdown-menu,
+    .has-dropdown.dropdown-open .dropdown-menu {
         display: block;
     }
 

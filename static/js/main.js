@@ -2,21 +2,53 @@
 document.addEventListener('DOMContentLoaded', function() {
     const navToggle = document.querySelector('.nav-toggle');
     const navMenu = document.querySelector('.nav-menu');
-    
+
     if (navToggle) {
         navToggle.addEventListener('click', function(e) {
             e.stopPropagation();
             navMenu.classList.toggle('active');
         });
     }
-    
+
+    // Mobile dropdown toggle functionality
+    const isMobile = () => window.innerWidth <= 778;
+
+    document.querySelectorAll('.has-dropdown > .nav-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+            // Only intercept on mobile devices
+            if (isMobile()) {
+                console.log('Mobile dropdown clicked, width:', window.innerWidth);
+                e.preventDefault();
+                e.stopPropagation();
+
+                const parentItem = this.closest('.has-dropdown');
+                const isOpen = parentItem.classList.contains('dropdown-open');
+
+                // Close all other dropdowns
+                document.querySelectorAll('.has-dropdown').forEach(item => {
+                    if (item !== parentItem) {
+                        item.classList.remove('dropdown-open');
+                    }
+                });
+
+                // Toggle this dropdown
+                parentItem.classList.toggle('dropdown-open');
+                console.log('Dropdown toggled, now open:', parentItem.classList.contains('dropdown-open'));
+            }
+        });
+    });
+
     // Close mobile menu when clicking outside
     document.addEventListener('click', function(event) {
         if (navMenu && !event.target.closest('.main-nav')) {
             navMenu.classList.remove('active');
+            // Also close any open dropdowns
+            document.querySelectorAll('.has-dropdown').forEach(item => {
+                item.classList.remove('dropdown-open');
+            });
         }
     });
-    
+
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
@@ -30,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-    
+
     // Add active state to current page in nav
     const currentPath = window.location.pathname;
     document.querySelectorAll('.nav-link').forEach(link => {
@@ -39,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
             link.classList.add('active');
         }
     });
-    
+
     initAnalyticsTracking();
     initCarousels();
 });
