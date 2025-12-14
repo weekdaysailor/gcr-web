@@ -2,10 +2,10 @@
 
 /* Variables */
 :root {
-    --primary-color: #e53d20;
-    --secondary-color: #81d742;
-    --accent-yellow: #eeee22;
-    --blue-hover: #0874ac;
+    --primary-color: #1765a9;
+    --secondary-color: #20c7ca;
+    --accent-yellow: #e2701a;
+    --blue-hover: #0f4c81;
     --text-color: #1f252e;
     --bg-color: #fff;
     --light-bg: #f5f5f5;
@@ -20,11 +20,11 @@
     --shadow-sm: 0 2px 8px rgba(0,0,0,0.1);
     --shadow-md: 0 4px 16px rgba(0,0,0,0.15);
     --shadow-lg: 0 8px 24px rgba(0,0,0,0.2);
-    --forest: #0b5d4a;
-    --canopy: #79b473;
-    --sunrise: #f5c47c;
-    --deep-ocean: #031b2c;
-    --dusk: #102437;
+    --forest: #0f4c81;
+    --canopy: #189799;
+    --sunrise: #e2701a;
+    --deep-ocean: #04245c;
+    --dusk: #304751;
     --card-radius: 36px;
     --card-shadow: 0 40px 120px rgba(9, 32, 45, 0.18);
 }
@@ -95,13 +95,13 @@ body {
     font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.65;
     color: var(--text-color);
-    background-color: #f5fbf7;
+    background-color: #f2f7fb;
     background-image:
         url("/images/nature-texture.svg"),
-        radial-gradient(circle at 20% 20%, rgba(121, 180, 115, 0.2), transparent 55%),
-        radial-gradient(circle at 80% 10%, rgba(245, 196, 124, 0.2), transparent 45%),
-        radial-gradient(circle at 80% 75%, rgba(11, 93, 74, 0.15), transparent 65%),
-        linear-gradient(180deg, #f5fbf7 0%, #fdfcf4 50%, #eff6f0 100%);
+        radial-gradient(circle at 20% 20%, rgba(23, 101, 169, 0.22), transparent 55%),
+        radial-gradient(circle at 80% 10%, rgba(32, 199, 202, 0.2), transparent 45%),
+        radial-gradient(circle at 80% 75%, rgba(4, 36, 92, 0.18), transparent 65%),
+        linear-gradient(180deg, #edf4fb 0%, #f7fbff 45%, #eef8fb 100%);
     background-repeat: repeat, no-repeat, no-repeat, no-repeat, no-repeat;
     background-size: 320px 320px, 180% 180%, 140% 140%, 160% 160%, 100% 100%;
     background-position: 0 0, 20% 20%, 80% 10%, 80% 75%, 50% 50%;
@@ -126,8 +126,8 @@ body::before {
     left: -80px;
     width: 520px;
     height: 520px;
-    background: radial-gradient(circle at 30% 30%, rgba(121, 180, 115, 0.45), transparent 70%),
-                radial-gradient(circle at 70% 40%, rgba(245, 196, 124, 0.5), transparent 65%);
+    background: radial-gradient(circle at 30% 30%, rgba(23, 101, 169, 0.3), transparent 70%),
+                radial-gradient(circle at 70% 40%, rgba(32, 199, 202, 0.25), transparent 65%);
     opacity: 0.8;
 }
 
@@ -136,8 +136,8 @@ body::after {
     right: -100px;
     width: 600px;
     height: 600px;
-    background: radial-gradient(circle at 75% 20%, rgba(11, 93, 74, 0.35), transparent 65%),
-                radial-gradient(circle at 30% 70%, rgba(121, 180, 115, 0.4), transparent 70%);
+    background: radial-gradient(circle at 75% 20%, rgba(4, 36, 92, 0.28), transparent 65%),
+                radial-gradient(circle at 30% 70%, rgba(32, 199, 202, 0.25), transparent 70%);
     opacity: 0.65;
 }
 
@@ -160,15 +160,15 @@ body::after {
     inset: -60px calc(var(--spacing) * -1) 0;
     z-index: -1;
     background-image:
-        radial-gradient(circle at 30% 20%, rgba(121, 180, 115, 0.25), transparent 60%),
-        radial-gradient(circle at 70% 10%, rgba(245, 196, 124, 0.2), transparent 65%),
-        radial-gradient(circle at 85% 70%, rgba(11, 93, 74, 0.25), transparent 70%),
+        radial-gradient(circle at 30% 20%, rgba(23, 101, 169, 0.18), transparent 60%),
+        radial-gradient(circle at 70% 10%, rgba(32, 199, 202, 0.18), transparent 65%),
+        radial-gradient(circle at 85% 70%, rgba(4, 36, 92, 0.2), transparent 70%),
         url("/images/nature-texture.svg");
     background-size: 120% 120%, 110% 110%, 140% 140%, 280px 280px;
     background-repeat: no-repeat, no-repeat, no-repeat, repeat;
     background-position: 25% 25%, 70% 10%, 80% 75%, 0 0;
     opacity: 0.45;
-    filter: drop-shadow(0 20px 40px rgba(11, 93, 74, 0.15));
+    filter: drop-shadow(0 20px 40px rgba(4, 36, 92, 0.15));
 }
 
 .home section {
@@ -184,8 +184,8 @@ body::after {
     position: absolute;
     inset: 1.25rem;
     background-image:
-        radial-gradient(circle at 15% 25%, rgba(121, 180, 115, 0.12), transparent 65%),
-        radial-gradient(circle at 80% 10%, rgba(245, 196, 124, 0.18), transparent 60%),
+        radial-gradient(circle at 15% 25%, rgba(23, 101, 169, 0.12), transparent 65%),
+        radial-gradient(circle at 80% 10%, rgba(32, 199, 202, 0.18), transparent 60%),
         url("/images/nature-texture.svg");
     background-size: 140% 140%, 120% 120%, 320px 320px;
     background-repeat: no-repeat, no-repeat, repeat;
@@ -238,7 +238,8 @@ a:hover { color: var(--primary-color); text-decoration: underline; }
 }
 
 .logo img {
-    height: 60px;
+    height: 72px;
+    width: auto;
 }
 
 /* Navigation */
@@ -475,14 +476,14 @@ a:hover { color: var(--primary-color); text-decoration: underline; }
     box-shadow: none;
     position: relative;
     z-index: 1;
-    background-image: radial-gradient(circle at 20% 15%, rgba(121, 180, 115, 0.08), transparent 55%),
+    background-image: radial-gradient(circle at 20% 15%, rgba(32, 199, 202, 0.08), transparent 55%),
                       url("/images/nature-texture.svg");
     background-repeat: no-repeat, repeat;
     background-size: 160% 160%, 420px 420px;
 }
 
 .info-section--muted {
-    background-color: rgba(239, 246, 240, 0.98);
+    background-color: rgba(240, 248, 251, 0.98);
 }
 
 .info-grid {
@@ -555,7 +556,7 @@ a:hover { color: var(--primary-color); text-decoration: underline; }
 
 /* CTA */
 .cta-panel {
-    background: linear-gradient(120deg, rgba(11, 93, 74, 0.95), rgba(3, 27, 44, 0.95));
+    background: linear-gradient(120deg, rgba(4, 36, 92, 0.95), rgba(23, 101, 169, 0.92));
     border-radius: var(--card-radius);
     padding: clamp(2.5rem, 4vw, 3.5rem);
     color: white;
@@ -922,7 +923,7 @@ main > section:first-of-type.home-card {
     color: var(--deep-ocean);
     background: var(--sunrise);
     border-color: var(--sunrise);
-    box-shadow: 0 8px 18px rgba(245, 196, 124, 0.3);
+    box-shadow: 0 8px 18px rgba(226, 112, 26, 0.35);
 }
 
 .btn.btn-tertiary:hover {
@@ -957,7 +958,7 @@ main > section:first-of-type.home-card {
 }
 
 .demonstrations {
-    background: linear-gradient(145deg, rgba(3, 27, 44, 0.95), rgba(5, 59, 74, 0.85));
+    background: linear-gradient(135deg, rgba(4, 36, 92, 0.95), rgba(23, 101, 169, 0.85));
     color: white;
 }
 
@@ -1410,6 +1411,229 @@ main > section:first-of-type.home-card {
     margin-bottom: 2rem;
 }
 
+/* Policy Paper Landing */
+.policy-hero {
+    background: linear-gradient(135deg, rgba(4,36,92,0.04), rgba(32,199,202,0.08));
+    overflow: hidden;
+}
+
+.policy-hero__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    align-items: stretch;
+}
+
+.policy-hero__content {
+    position: relative;
+    z-index: 2;
+}
+
+.policy-hero__content h1 {
+    font-size: clamp(2.2rem, 3vw, 3rem);
+}
+
+.policy-eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 0.8rem;
+    color: rgba(4, 36, 92, 0.65);
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+
+.policy-event {
+    font-size: 1rem;
+    font-weight: 600;
+    color: rgba(4, 36, 92, 0.85);
+    margin-bottom: 1rem;
+}
+
+.policy-lede {
+    font-size: 1.15rem;
+    margin-bottom: 1.5rem;
+    color: rgba(4, 36, 92, 0.8);
+}
+
+.policy-presenter {
+    font-size: 0.95rem;
+    color: rgba(4, 36, 92, 0.8);
+    margin-bottom: 1rem;
+}
+
+.policy-meta {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+}
+
+.policy-meta div span {
+    display: block;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(4, 36, 92, 0.6);
+}
+
+.policy-meta div strong {
+    font-size: 1rem;
+    color: var(--deep-ocean);
+}
+
+.policy-hero__ctas {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.policy-hero__gallery {
+    position: relative;
+    min-height: 320px;
+    z-index: 1;
+}
+
+.policy-hero__frame {
+    width: min(420px, 80vw);
+    aspect-ratio: 3 / 2;
+    border-radius: 32px;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 35px 80px rgba(4,36,92,0.22);
+    border: 1px solid rgba(4,36,92,0.12);
+    position: relative;
+}
+
+.policy-hero__frame--secondary {
+    position: absolute;
+    bottom: -35px;
+    right: -35px;
+    width: min(220px, 60vw);
+    aspect-ratio: 3 / 4;
+    opacity: 0.95;
+}
+
+.policy-hero__frame span {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: var(--secondary-color);
+    color: #fff;
+    padding: 0.25rem 0.9rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.policy-announcement__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.policy-announcement__grid article {
+    background: rgba(255,255,255,0.92);
+    border-radius: 26px;
+    padding: 1.75rem;
+    border: 1px solid rgba(4,36,92,0.08);
+    box-shadow: 0 18px 40px rgba(4,36,92,0.08);
+}
+
+.policy-distribution {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+}
+
+.policy-distribution li {
+    margin-bottom: 0.4rem;
+    font-size: 0.95rem;
+}
+
+.policy-distribution span {
+    font-weight: 600;
+    margin-right: 0.5rem;
+}
+
+.policy-spotlight__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    align-items: center;
+}
+
+.policy-spotlight__grid figure {
+    text-align: center;
+}
+
+.policy-spotlight__grid figure img {
+    width: min(320px, 80vw);
+    border-radius: 28px;
+    box-shadow: 0 30px 60px rgba(4,36,92,0.2);
+}
+
+.policy-spotlight__grid figcaption {
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+    color: rgba(4,36,92,0.75);
+}
+
+.policy-spotlight__summary p {
+    margin-bottom: 1rem;
+}
+
+.policy-spotlight__media img {
+    width: min(280px, 60vw);
+    border-radius: 24px;
+    box-shadow: 0 20px 45px rgba(4,36,92,0.15);
+    margin-bottom: 0.75rem;
+}
+
+.policy-substack__wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.policy-substack__logo img {
+    height: 60px;
+    width: auto;
+}
+
+.policy-videos__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+}
+
+.policy-video__frame {
+    position: relative;
+    padding-top: 56.25%;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(4,36,92,0.2);
+    border: 1px solid rgba(4,36,92,0.08);
+    margin-bottom: 0.75rem;
+}
+
+.policy-video__frame iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.policy-content {
+    background: rgba(4,36,92,0.02);
+}
+
+.policy-content ul {
+    margin-left: 1.25rem;
+}
 /* Page List */
 .page-list {
     display: grid;

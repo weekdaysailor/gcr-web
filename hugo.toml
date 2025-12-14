@@ -7,7 +7,7 @@ title = "Global Carbon Reward"
   description = "From climate gridlock to a regenerative financial system"
   author = "Dr. Delton Chen"
   email = "info@globalcarbonreward.org"
-  logo = "/images/gcr-logo.svg"
+  logo = "/images/gcr-logo.png"
   
   [params.forms]
     contactEndpoint = ""  # e.g., https://formspree.io/f/xyz
