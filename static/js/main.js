@@ -13,27 +13,33 @@ document.addEventListener('DOMContentLoaded', function() {
     // Mobile dropdown toggle functionality
     const isMobile = () => window.innerWidth <= 778;
 
+    const handleDropdownToggle = function(e) {
+        // Only intercept on mobile devices
+        if (isMobile()) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            const parentItem = this.closest('.has-dropdown');
+
+            // Close all other dropdowns
+            document.querySelectorAll('.has-dropdown').forEach(item => {
+                if (item !== parentItem) {
+                    item.classList.remove('dropdown-open');
+                }
+            });
+
+            // Toggle this dropdown
+            parentItem.classList.toggle('dropdown-open');
+        }
+    };
+
     document.querySelectorAll('.has-dropdown > .nav-link').forEach(link => {
-        link.addEventListener('click', function(e) {
-            // Only intercept on mobile devices
+        // Handle both click and touch events for better mobile support
+        link.addEventListener('click', handleDropdownToggle);
+        link.addEventListener('touchend', function(e) {
             if (isMobile()) {
-                console.log('Mobile dropdown clicked, width:', window.innerWidth);
                 e.preventDefault();
-                e.stopPropagation();
-
-                const parentItem = this.closest('.has-dropdown');
-                const isOpen = parentItem.classList.contains('dropdown-open');
-
-                // Close all other dropdowns
-                document.querySelectorAll('.has-dropdown').forEach(item => {
-                    if (item !== parentItem) {
-                        item.classList.remove('dropdown-open');
-                    }
-                });
-
-                // Toggle this dropdown
-                parentItem.classList.toggle('dropdown-open');
-                console.log('Dropdown toggled, now open:', parentItem.classList.contains('dropdown-open'));
+                handleDropdownToggle.call(this, e);
             }
         });
     });
