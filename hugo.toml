@@ -35,40 +35,47 @@ title = "Global Carbon Reward"
     weight = 1
 
   [[menu.main]]
+    identifier = "about-overview"
+    name = "Overview"
+    url = "/about/"
+    parent = "about"
+    weight = 1
+
+  [[menu.main]]
     name = "Our Vision"
     url = "/about/our-vision/"
     parent = "about"
-    weight = 1
+    weight = 2
 
   [[menu.main]]
     name = "Our Mission"
     url = "/about/our-mission/"
     parent = "about"
-    weight = 2
+    weight = 3
 
   [[menu.main]]
     name = "Our Plan"
     url = "/about/our-plan/"
     parent = "about"
-    weight = 3
+    weight = 4
 
   [[menu.main]]
     name = "Founder's Message"
     url = "/about/founders-message/"
     parent = "about"
-    weight = 4
+    weight = 5
 
   [[menu.main]]
     name = "Our Team"
     url = "/about/our-team/"
     parent = "about"
-    weight = 5
+    weight = 6
 
   [[menu.main]]
     name = "Our Logo"
     url = "/about/our-logo/"
     parent = "about"
-    weight = 6
+    weight = 7
 
   # The Policy Section (formerly Rewards)
   [[menu.main]]
@@ -77,16 +84,23 @@ title = "Global Carbon Reward"
     weight = 2
 
   [[menu.main]]
+    identifier = "policy-overview"
+    name = "Overview"
+    url = "/rewards/"
+    parent = "policy"
+    weight = 1
+
+  [[menu.main]]
     name = "Introduction"
     url = "/rewards/introduction/"
     parent = "policy"
-    weight = 1
+    weight = 2
 
   [[menu.main]]
     name = "Policy Paper"
     url = "/rewards/policy-paper/"
     parent = "policy"
-    weight = 2
+    weight = 3
 
   # Why It Matters Section (formerly Audiences)
   [[menu.main]]
@@ -95,28 +109,35 @@ title = "Global Carbon Reward"
     weight = 3
 
   [[menu.main]]
+    identifier = "why-it-matters-overview"
+    name = "Overview"
+    url = "/audiences/"
+    parent = "why-it-matters"
+    weight = 1
+
+  [[menu.main]]
     name = "For Economists"
     url = "/audiences/economists/"
     parent = "why-it-matters"
-    weight = 1
+    weight = 2
 
   [[menu.main]]
     name = "For Business Leaders"
     url = "/audiences/business-leaders/"
     parent = "why-it-matters"
-    weight = 2
+    weight = 3
 
   [[menu.main]]
     name = "For Policymakers"
     url = "/audiences/policymakers/"
     parent = "why-it-matters"
-    weight = 3
+    weight = 4
 
   [[menu.main]]
     name = "For Investors"
     url = "/audiences/investors/"
     parent = "why-it-matters"
-    weight = 4
+    weight = 5
 
   # Presentations
   [[menu.main]]
