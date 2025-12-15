@@ -1,14 +1,40 @@
 {{ with .Site.Params.googleAnalytics }}
     {{ if ne . "" }}
-<script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', '{{ . }}', {
-    'anonymize_ip': true,
-    'send_page_view': true
-});
+<script id="ga-script" data-ga-id="{{ . }}">
+// Google Analytics will be loaded only after cookie consent
+(function() {
+    const gaID = '{{ . }}';
+
+    // Check if user has already consented
+    const cookieConsent = localStorage.getItem('cookie-consent');
+
+    if (cookieConsent === 'accepted') {
+        loadGoogleAnalytics(gaID);
+    }
+
+    function loadGoogleAnalytics(id) {
+        // Load GA script
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=' + id;
+        document.head.appendChild(script);
+
+        // Initialize GA
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', id, {
+            'anonymize_ip': true,
+            'send_page_view': true,
+            'cookie_flags': 'SameSite=None;Secure'
+        });
+
+        window.gtag = gtag;
+    }
+
+    // Expose function globally for cookie consent handler
+    window.loadGoogleAnalytics = loadGoogleAnalytics;
+})();
 </script>
     {{ end }}
 {{ end }}

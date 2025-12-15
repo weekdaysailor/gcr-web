@@ -86,6 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     initAnalyticsTracking();
     initCarousels();
+    initCookieConsent();
 });
 
 /**
@@ -190,5 +191,43 @@ function initCarousels() {
                 }
             });
         });
+    });
+}
+
+/**
+ * Handles EU cookie consent banner and analytics loading
+ */
+function initCookieConsent() {
+    const banner = document.getElementById('cookie-consent');
+    const acceptBtn = document.getElementById('cookie-accept');
+    const rejectBtn = document.getElementById('cookie-reject');
+
+    if (!banner) return;
+
+    // Check if user has already made a choice
+    const cookieConsent = localStorage.getItem('cookie-consent');
+
+    if (!cookieConsent) {
+        // Show banner if no choice has been made
+        banner.style.display = 'block';
+        // Add ARIA live region announcement
+        banner.setAttribute('role', 'dialog');
+        banner.setAttribute('aria-label', 'Cookie consent');
+    }
+
+    acceptBtn?.addEventListener('click', () => {
+        localStorage.setItem('cookie-consent', 'accepted');
+        banner.style.display = 'none';
+
+        // Load Google Analytics if available
+        const gaID = document.body.dataset.gaId;
+        if (gaID && typeof window.loadGoogleAnalytics === 'function') {
+            window.loadGoogleAnalytics(gaID);
+        }
+    });
+
+    rejectBtn?.addEventListener('click', () => {
+        localStorage.setItem('cookie-consent', 'rejected');
+        banner.style.display = 'none';
     });
 }

@@ -1,28 +1,28 @@
-<header class="site-header">
+<header class="site-header" role="banner">
     <div class="container">
         <div class="header-content">
             <div class="logo">
-                <a href="{{ "/" | relLangURL }}">
+                <a href="{{ "/" | relLangURL }}" aria-label="Global Carbon Reward home">
                     <img src="{{ .Site.Params.logo }}" alt="{{ .Site.Title }}">
                 </a>
             </div>
-            
-            <nav class="main-nav" id="main-nav">
-                <button class="nav-toggle" aria-label="Toggle navigation">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+
+            <nav class="main-nav" id="main-nav" role="navigation" aria-label="Main navigation">
+                <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
                 </button>
-                
-                <ul class="nav-menu">
+
+                <ul class="nav-menu" id="nav-menu">
                     {{ range .Site.Menus.main }}
                         {{ if not .Parent }}
                         <li class="nav-item{{ if .HasChildren }} has-dropdown{{ end }}">
-                            <a href="{{ .URL }}" class="nav-link">{{ .Name }}</a>
+                            <a href="{{ .URL }}" class="nav-link"{{ if .HasChildren }} aria-haspopup="true" aria-expanded="false"{{ end }}>{{ .Name }}</a>
                             {{ if .HasChildren }}
-                            <ul class="dropdown-menu">
+                            <ul class="dropdown-menu" role="menu">
                                 {{ range .Children }}
-                                <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+                                <li role="none"><a href="{{ .URL }}" role="menuitem">{{ .Name }}</a></li>
                                 {{ end }}
                             </ul>
                             {{ end }}

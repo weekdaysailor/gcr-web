@@ -34,14 +34,17 @@
 {{ $bodyClass := "" }}
 {{ if .IsHome }}{{ $bodyClass = "home" }}{{ end }}
 <body{{ if $bodyClass }} class="{{ $bodyClass }}"{{ end }}{{ if $gaID }} data-ga-id="{{ $gaID }}"{{ end }}>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     {{ partial "header.html" . }}
-    
-    <main>
+
+    <main id="main-content">
         {{ block "main" . }}{{ end }}
     </main>
-    
+
     {{ partial "footer.html" . }}
-    
+    {{ partial "cookie-consent.html" . }}
+
     <script src="/js/main.js"></script>
 </body>
 </html>
