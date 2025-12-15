@@ -21,7 +21,7 @@ title = "Global Carbon Reward"
     fiscalSponsor = "Inquiring Systems Inc. (ISI)"
 
   [params.newsletter]
-    subscribeEndpoint = ""  # e.g., https://formspree.io/f/xyz or Mailchimp endpoint
+    subscribeEndpoint = "https://globalcarbonreward.us1.list-manage.com/subscribe/post"
 
   # Social media
   twitter = ""

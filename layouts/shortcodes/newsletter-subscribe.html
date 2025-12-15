@@ -8,18 +8,27 @@
 <div class="form-card newsletter-form-card">
   {{ if $formEnabled }}
   <form action="{{ $action }}" method="POST" class="newsletter-form" data-form="newsletter">
-    <input type="hidden" name="form_name" value="gcr-newsletter" />
-    <input type="hidden" name="source_page" value="{{ .Page.RelPermalink }}" />
+    <!-- Mailchimp required hidden fields -->
+    <input type="hidden" name="u" value="6073fed8eaa32d4a1b8934b55" />
+    <input type="hidden" name="id" value="49d22f482f" />
+
+    <!-- Honeypot field for spam prevention -->
+    <input type="text" name="b_email" tabindex="-1" value="" style="position: absolute; left: -5000px;" aria-hidden="true" />
 
     <div class="form-grid">
       <label class="form-field">
-        <span>Name*</span>
-        <input type="text" name="your-name" required placeholder="Your name" />
+        <span>First Name*</span>
+        <input type="text" name="MERGE1" required placeholder="Your first name" />
+      </label>
+
+      <label class="form-field">
+        <span>Last Name</span>
+        <input type="text" name="MERGE2" placeholder="Your last name" />
       </label>
 
       <label class="form-field">
         <span>Email*</span>
-        <input type="email" name="your-email" required placeholder="you@example.com" />
+        <input type="email" name="MERGE0" required placeholder="you@example.com" />
       </label>
     </div>
 
