@@ -278,6 +278,10 @@ a:hover { color: var(--primary-color); text-decoration: underline; }
     position: relative;
 }
 
+.nav-link[href=""] {
+    cursor: default;
+}
+
 .nav-item:hover > .nav-link,
 .nav-item:focus-within > .nav-link {
     color: var(--blue-hover);

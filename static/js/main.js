@@ -14,12 +14,18 @@ document.addEventListener('DOMContentLoaded', function() {
     const isMobile = () => window.innerWidth <= 778;
 
     const handleDropdownToggle = function(e) {
-        // Only intercept on mobile devices
-        if (isMobile()) {
+        const link = this;
+        const parentItem = link.closest('.has-dropdown');
+
+        // Prevent navigation for empty hrefs (label-only menu items)
+        if (!link.href || link.getAttribute('href') === '') {
+            e.preventDefault();
+        }
+
+        // Only intercept on mobile devices for dropdown toggle
+        if (isMobile() && parentItem) {
             e.preventDefault();
             e.stopPropagation();
-
-            const parentItem = this.closest('.has-dropdown');
 
             // Close all other dropdowns
             document.querySelectorAll('.has-dropdown').forEach(item => {
