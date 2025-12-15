@@ -15,31 +15,14 @@
                 </button>
 
                 <ul class="nav-menu" id="nav-menu">
-                    {{ $currentPage := . }}
-                    {{ $navSubtitles := dict
-                        "about" "Who we are and how we work"
-                        "policy" "How Carbon Rewards function"
-                        "why-it-matters" "Value for your role"
-                        "learn-more" "Talks, decks, and briefings"
-                        "get-involved" "Contact, newsletter, and donations"
-                    }}
                     {{ range .Site.Menus.main }}
                         {{ if not .Parent }}
-                        {{ $isCurrent := or ($currentPage.HasMenuCurrent "main" .) ($currentPage.IsMenuCurrent "main" .) }}
-                        {{ $key := cond (ne .Identifier "") (lower .Identifier) (urlize (lower .Name)) }}
-                        {{ $subtitle := index $navSubtitles $key }}
-                        <li class="nav-item{{ if .HasChildren }} has-dropdown{{ end }}{{ if $isCurrent }} is-current{{ end }}">
-                            <a href="{{ .URL }}" class="nav-link{{ if $isCurrent }} active{{ end }}"{{ if .HasChildren }} aria-haspopup="true" aria-expanded="false"{{ end }}{{ if $isCurrent }} aria-current="page"{{ end }}>
-                                <span class="nav-title">{{ .Name }}</span>
-                                {{ if $subtitle }}<span class="nav-subtitle">{{ $subtitle }}</span>{{ end }}
-                            </a>
+                        <li class="nav-item{{ if .HasChildren }} has-dropdown{{ end }}">
+                            <a href="{{ .URL }}" class="nav-link"{{ if .HasChildren }} aria-haspopup="true" aria-expanded="false"{{ end }}>{{ .Name }}</a>
                             {{ if .HasChildren }}
                             <ul class="dropdown-menu" role="menu">
                                 {{ range .Children }}
-                                {{ $childCurrent := or ($currentPage.IsMenuCurrent "main" .) (eq $currentPage.RelPermalink .URL) }}
-                                <li role="none" class="{{ if $childCurrent }}active{{ end }}">
-                                    <a href="{{ .URL }}" role="menuitem" class="{{ if $childCurrent }}active{{ end }}"{{ if $childCurrent }} aria-current="page"{{ end }}>{{ .Name }}</a>
-                                </li>
+                                <li role="none"><a href="{{ .URL }}" role="menuitem">{{ .Name }}</a></li>
                                 {{ end }}
                             </ul>
                             {{ end }}

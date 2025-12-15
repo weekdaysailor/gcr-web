@@ -1,27 +1,44 @@
 {{ define "main" }}
-<section class="page-hero home-card">
+<section class="page-hero audience-hero">
     <div class="container">
-        <p class="hero-eyebrow">Why it matters</p>
         <h1>{{ .Title }}</h1>
-        {{ if .Description }}<p class="page-description">{{ .Description }}</p>{{ end }}
+        <p class="page-description">{{ .Description }}</p>
     </div>
 </section>
 
-{{ partial "audience-cards.html" (dict
-    "eyebrow" "Guided paths by audience"
-    "title" "See how the policy supports your role"
-    "description" "Choose a perspective to get a concise overview and targeted entry points."
-    "muted" true
-    "id" "why-it-matters-paths"
-) }}
-
-<section class="page-content-section home-card">
+<section class="audience-selector">
     <div class="container">
-        {{ if .Content }}
-        <div class="page-intro">
-            {{ .Content }}
+        {{ .Content }}
+
+        <div class="audience-grid">
+            <a href="/audiences/economists/" class="audience-card">
+                <div class="audience-icon">📊</div>
+                <h3>For Economists</h3>
+                <p>Carbon pricing theory, macroeconomic impacts, and central bank mechanisms</p>
+                <span class="card-arrow">→</span>
+            </a>
+
+            <a href="/audiences/business-leaders/" class="audience-card">
+                <div class="audience-icon">💼</div>
+                <h3>For Business Leaders</h3>
+                <p>Investment opportunities, competitive advantage, and implementation pathways</p>
+                <span class="card-arrow">→</span>
+            </a>
+
+            <a href="/audiences/policymakers/" class="audience-card">
+                <div class="audience-icon">🏛️</div>
+                <h3>For Policymakers</h3>
+                <p>Legislative framework, international cooperation, and policy demonstrations</p>
+                <span class="card-arrow">→</span>
+            </a>
+
+            <a href="/audiences/investors/" class="audience-card">
+                <div class="audience-icon">📈</div>
+                <h3>For Investors</h3>
+                <p>Financial mechanisms, returns, and investment opportunities</p>
+                <span class="card-arrow">→</span>
+            </a>
         </div>
-        {{ end }}
     </div>
 </section>
 {{ end }}
