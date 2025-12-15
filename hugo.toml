@@ -139,9 +139,9 @@ title = "Global Carbon Reward"
     parent = "why-it-matters"
     weight = 5
 
-  # Presentations
+  #Resources
   [[menu.main]]
-    name = "Presentations"
+    name = "Learn More"
     url = "/presentations/"
     weight = 4
 
