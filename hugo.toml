@@ -38,13 +38,6 @@ title = "Global Carbon Reward"
     weight = 1
 
   [[menu.main]]
-    identifier = "about-overview"
-    name = "Overview"
-    url = "/about/"
-    parent = "about"
-    weight = 1
-
-  [[menu.main]]
     name = "Our Vision"
     url = "/about/our-vision/"
     parent = "about"
@@ -88,16 +81,16 @@ title = "Global Carbon Reward"
 
   [[menu.main]]
     identifier = "policy-overview"
-    name = "Overview"
+    name = "Carbon Rewards"
     url = "/rewards/"
     parent = "policy"
-    weight = 1
+    weight = 2
 
   [[menu.main]]
     name = "Introduction"
     url = "/rewards/introduction/"
     parent = "policy"
-    weight = 2
+    weight = 1
 
   [[menu.main]]
     name = "Policy Paper"
