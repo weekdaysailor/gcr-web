@@ -1,0 +1,48 @@
+{{ $params := .Site.Params.newsletter }}
+{{ $action := "" }}
+{{ if $params }}
+  {{ $action = $params.subscribeEndpoint }}
+{{ end }}
+{{ $formEnabled := gt (len $action) 0 }}
+
+<div class="form-card newsletter-form-card">
+  {{ if $formEnabled }}
+  <form action="{{ $action }}" method="POST" class="newsletter-form" data-form="newsletter">
+    <input type="hidden" name="form_name" value="gcr-newsletter" />
+    <input type="hidden" name="source_page" value="{{ .Page.RelPermalink }}" />
+
+    <div class="form-grid">
+      <label class="form-field">
+        <span>Name*</span>
+        <input type="text" name="your-name" required placeholder="Your name" />
+      </label>
+
+      <label class="form-field">
+        <span>Email*</span>
+        <input type="email" name="your-email" required placeholder="you@example.com" />
+      </label>
+    </div>
+
+    <label class="form-consent">
+      <input type="checkbox" name="consent" required />
+      <span>I am at least 18 years old, and I agree that my submitted data will be stored in GCR's subscription list in accordance with our <a href="/privacy-policy/">privacy policy</a>.</span>
+    </label>
+
+    <div class="form-actions">
+      <button type="submit"
+              class="btn btn-primary"
+              data-analytics-event="newsletter_subscribe"
+              data-analytics-category="engagement"
+              data-analytics-label="newsletter_form">
+        Subscribe to Newsletter
+      </button>
+      <p class="form-note">A confirmation email will be automatically sent to your email address. Please check your spam folder or filter settings.</p>
+    </div>
+  </form>
+  {{ else }}
+  <div class="form-disabled">
+    <p>The newsletter subscription form is currently disabled. Add a submission endpoint to <code>params.newsletter.subscribeEndpoint</code> in <code>hugo.toml</code> to enable it.</p>
+    <p>In the meantime, you can subscribe via our <a href="https://us1.campaign-archive.com/home/?u=6073fed8eaa32d4a1b8934b55&id=49d22f482f">Mailchimp page</a> or <a href="https://deltonchen.substack.com/">Substack</a>.</p>
+  </div>
+  {{ end }}
+</div>

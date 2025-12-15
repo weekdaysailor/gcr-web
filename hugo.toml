@@ -19,11 +19,14 @@ title = "Global Carbon Reward"
     supportPhone = "+1 (707) 939-3900"
     supportHoursUrl = "https://www.timeanddate.com/time/zone/usa/sonoma"
     fiscalSponsor = "Inquiring Systems Inc. (ISI)"
-  
+
+  [params.newsletter]
+    subscribeEndpoint = ""  # e.g., https://formspree.io/f/xyz or Mailchimp endpoint
+
   # Social media
   twitter = ""
   linkedin = ""
-  
+
   # Features
   googleAnalytics = "G-XXXXXXXXXX"  # Replace with your GA4 Measurement ID
   
@@ -154,6 +157,12 @@ title = "Global Carbon Reward"
   [[menu.main]]
     name = "Contact"
     url = "/contact/"
+    parent = "get-involved"
+    weight = 1
+
+[[menu.main]]
+    name = "Newsletter"
+    url = "/newsletter/"
     parent = "get-involved"
     weight = 1
 
