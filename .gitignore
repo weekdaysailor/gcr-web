@@ -4,6 +4,7 @@ resources/_gen/
 
 # Hugo lock file
 .hugo_build.lock
+docs/*.pdf
 
 # OS files
 .DS_Store
@@ -22,3 +23,6 @@ node_modules/
 # Temporary files
 *.log
 *.tmp
+
+# Downloaded upstream WordPress assets
+static/images/globalcarbonreward/wp-content/
