@@ -1,0 +1,12 @@
+- id: rc1
+  title: "Reward Channel 1: Carbon Removal"
+  summary: "Pays for verified atmospheric carbon removal, including durable storage and nature-based removals with safeguards."
+  weight: 1
+- id: rc2
+  title: "Reward Channel 2: Conventional Mitigation"
+  summary: "Rewards emissions reductions at source across energy, industry, transport, and land use."
+  weight: 2
+- id: rc3
+  title: "Reward Channel 3: Community & Ecosystem Dividends"
+  summary: "Funds co-benefits that improve wellbeing, resilience, and ecosystem integrity alongside mitigation."
+  weight: 3

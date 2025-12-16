@@ -1,0 +1,11 @@
+{{ $channels := sort site.Data.reward_channels "weight" "asc" }}
+<div class="reward-channels">
+  <ol>
+    {{ range $channels }}
+    <li>
+      <strong>{{ .title }}</strong><br>
+      <span>{{ .summary }}</span>
+    </li>
+    {{ end }}
+  </ol>
+</div>

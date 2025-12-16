@@ -1,0 +1,50 @@
+{{ $feedURL := "https://deltonchen.substack.com/api/v1/archive?offset=0&limit=4&sort=new" }}
+{{ $posts := slice }}
+{{ with resources.GetRemote $feedURL }}
+  {{ $parsed := . | transform.Unmarshal }}
+  {{ if $parsed }}
+    {{ if (reflect.IsMap $parsed) }}
+      {{ with $parsed.posts }}
+        {{ $posts = . }}
+      {{ end }}
+    {{ else if (reflect.IsSlice $parsed) }}
+      {{ $posts = $parsed }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+<section class="substack-card home-card">
+    <div class="container substack-grid">
+        <div class="substack-copy">
+            <p class="info-eyebrow">Learn More</p>
+            <h2>Delton’s Substack</h2>
+            <p class="section-description">
+                Latest essays and policy notes from Dr. Delton Chen on carbon rewards, systemic risk,
+                and climate finance.
+            </p>
+            <a class="btn btn-primary" href="https://deltonchen.substack.com" target="_blank" rel="noopener" data-analytics-event="cta_substack_visit">
+                Visit the Substack
+            </a>
+        </div>
+        <div class="substack-posts">
+            {{ if gt (len $posts) 0 }}
+            <div class="substack-post-grid">
+                {{ range first 4 $posts }}
+                {{ $title := default "Latest post" .title }}
+                {{ $url := default "https://deltonchen.substack.com" (or .canonical_url .url .canonicalUrl) }}
+                {{ $subtitle := default "" (or .subtitle .description) }}
+                <article class="substack-post">
+                    <h3><a href="{{ $url }}" target="_blank" rel="noopener">{{ $title }}</a></h3>
+                    {{ if $subtitle }}<p>{{ $subtitle }}</p>{{ end }}
+                </article>
+                {{ end }}
+            </div>
+            {{ else }}
+            <div class="substack-fallback">
+                <p>See the latest posts on Substack.</p>
+                <a class="btn btn-secondary" href="https://deltonchen.substack.com" target="_blank" rel="noopener">Open Substack</a>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</section>
