@@ -8,6 +8,10 @@
     </div>
 </section>
 
+{{ if eq .Section "presentations" }}
+    {{ partial "substack-card.html" . }}
+{{ end }}
+
 <section class="page-content-section home-card">
     <div class="container">
         {{ if .Content }}

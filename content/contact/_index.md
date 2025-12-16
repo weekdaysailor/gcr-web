@@ -7,6 +7,8 @@ description: "Reach the Global Carbon Reward initiative for bookings, partnershi
 
 We're actively partnering with philanthropies, investors, governments, and research institutions. Use the options below to find the right point of contact or send us a direct message.
 
+{{< button href="/contact/book-a-meeting/" text="Book a meeting on Calendly" style="primary" >}}
+
 <div class="contact-grid">
   <div class="contact-card">
     <h3>International Coordinator</h3>
