@@ -16,14 +16,21 @@ document.addEventListener('DOMContentLoaded', function() {
     const handleDropdownToggle = function(e) {
         const link = this;
         const parentItem = link.closest('.has-dropdown');
+        const href = link.getAttribute('href') || '';
+        const isLabelOnly = href === '' || href === '#';
 
         // Prevent navigation for empty hrefs (label-only menu items)
-        if (!link.href || link.getAttribute('href') === '') {
+        if (isLabelOnly) {
             e.preventDefault();
         }
 
         // Only intercept on mobile devices for dropdown toggle
         if (isMobile() && parentItem) {
+            // If the dropdown is already open, allow a second tap/click to navigate
+            if (!isLabelOnly && parentItem.classList.contains('dropdown-open')) {
+                return;
+            }
+
             e.preventDefault();
             e.stopPropagation();
 
@@ -40,14 +47,8 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     document.querySelectorAll('.has-dropdown > .nav-link').forEach(link => {
-        // Handle both click and touch events for better mobile support
+        // Click is sufficient for both mouse and touch; keep logic centralized.
         link.addEventListener('click', handleDropdownToggle);
-        link.addEventListener('touchend', function(e) {
-            if (isMobile()) {
-                e.preventDefault();
-                handleDropdownToggle.call(this, e);
-            }
-        });
     });
 
     // Close mobile menu when clicking outside
@@ -79,7 +80,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const currentPath = window.location.pathname;
     document.querySelectorAll('.nav-link').forEach(link => {
         const linkPath = link.getAttribute('href');
-        if (linkPath === currentPath || (currentPath !== '/' && currentPath.startsWith(linkPath) && linkPath !== '/')) {
+        if (!linkPath || linkPath === '#') {
+            return;
+        }
+        if (linkPath === currentPath || (currentPath !== '/' && linkPath !== '/' && currentPath.startsWith(linkPath))) {
             link.classList.add('active');
         }
     });

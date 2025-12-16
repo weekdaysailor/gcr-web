@@ -38,6 +38,7 @@ title = "Global Carbon Reward"
   [[menu.main]]
     identifier = "about"
     name = "About"
+    url = "/about/"
     weight = 1
 
   [[menu.main]]
@@ -80,6 +81,7 @@ title = "Global Carbon Reward"
   [[menu.main]]
     identifier = "policy"
     name = "The Policy"
+    url = "/rewards/"
     weight = 2
 
   [[menu.main]]
@@ -117,6 +119,7 @@ title = "Global Carbon Reward"
   [[menu.main]]
     identifier = "why-it-matters"
     name = "Why It Matters"
+    url = "/audiences/"
     weight = 3
 
   [[menu.main]]
@@ -160,6 +163,7 @@ title = "Global Carbon Reward"
   [[menu.main]]
     identifier = "get-involved"
     name = "Get Involved"
+    url = "/contact/"
     weight = 5
 
   [[menu.main]]
