@@ -22,7 +22,13 @@
                             {{ if .HasChildren }}
                             <ul class="dropdown-menu" role="menu">
                                 {{ range .Children }}
-                                <li role="none"><a href="{{ .URL }}" role="menuitem">{{ .Name }}</a></li>
+                                {{ $subtitle := .Params.subtitle }}
+                                <li role="none">
+                                    <a href="{{ .URL }}" role="menuitem">
+                                        <span class="nav-title">{{ .Name }}</span>
+                                        {{ if $subtitle }}<span class="nav-subtitle">{{ $subtitle }}</span>{{ end }}
+                                    </a>
+                                </li>
                                 {{ end }}
                             </ul>
                             {{ end }}

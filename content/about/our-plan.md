@@ -16,7 +16,7 @@ The initial phase focuses on establishing collaborations with recognized NGOs an
 
 ### Demonstrations
 
-The second phase involves launching policy demonstrations with national governments over several years. A specialized currency trading team will manage the carbon currency's value and establish floor pricing. The demonstrations may utilize blockchain technology and involve various low-carbon projects including renewable energy, reforestation, carbon capture, and industrial decarbonization.
+The second phase involves launching policy demonstrations with national governments over several years. A specialized market team will help prototype the carbon reward (XCR) price path and coordinate with prospective central bank partners on defending a proposed floor. The demonstrations may utilize blockchain technology and involve various low-carbon projects including renewable energy, reforestation, carbon capture, and industrial decarbonization.
 
 ### Communication
 

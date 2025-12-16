@@ -6,7 +6,7 @@ weight: 4
 
 ## Global Carbon Reward for Investors
 
-The carbon reward (XCR) is the first sovereign-backed climate asset with a guaranteed price floor. It transforms mitigation performance into liquid, FX-tradable upside for sophisticated capital allocators.
+The carbon reward (XCR) is a proposed sovereign-supported climate asset with a defended price floor to be maintained by a future central bank alliance. It is designed to transform mitigation performance into liquid, FX-tradable upside for sophisticated capital allocators once implemented.
 
 ### Investment Highlights
 
@@ -50,7 +50,7 @@ The carbon reward (XCR) is the first sovereign-backed climate asset with a guara
 <div class="insight-card">
   <h4>Risk Mitigation</h4>
   <ul>
-    <li>Sovereign price floor reduces downside exposure.</li>
+    <li>Proposed sovereign price floor would reduce downside exposure.</li>
     <li>Independent MRV + 100-year contracts remove offset risk.</li>
     <li>Policy tailwinds (Paris, COP28 finance goals) support demand.</li>
   </ul>
@@ -65,7 +65,7 @@ The carbon reward (XCR) is the first sovereign-backed climate asset with a guara
     <h4>GCR / XCR</h4>
     <ul>
       <li>Reward for mitigation, not offsets</li>
-      <li>Central bank-backed price floor</li>
+      <li>Proposed central bank-backed price floor</li>
       <li>Reward Channel 3 bakes in SDG co-benefits</li>
     </ul>
   </article>

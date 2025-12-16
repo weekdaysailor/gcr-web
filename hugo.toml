@@ -23,6 +23,9 @@ title = "Global Carbon Reward"
   [params.newsletter]
     subscribeEndpoint = "https://globalcarbonreward.us1.list-manage.com/subscribe/post"
 
+  [params.calendly]
+    bookingUrl = "/contact/book-a-meeting/"
+
   # Social media
   twitter = ""
   linkedin = ""
@@ -96,7 +99,19 @@ title = "Global Carbon Reward"
     name = "Policy Paper"
     url = "/rewards/policy-paper/"
     parent = "policy"
-    weight = 3
+    weight = 99
+
+  [[menu.main]]
+    name = "Carbon Exchange Authority"
+    url = "/rewards/carbon-exchange-authority/"
+    parent = "policy"
+    weight = 4
+
+  [[menu.main]]
+    name = "Central Bank Role"
+    url = "/rewards/central-bank-role/"
+    parent = "policy"
+    weight = 6
 
   # Why It Matters Section (formerly Audiences)
   [[menu.main]]
@@ -153,17 +168,23 @@ title = "Global Carbon Reward"
     parent = "get-involved"
     weight = 1
 
+  [[menu.main]]
+    name = "Book a Meeting"
+    url = "/contact/book-a-meeting/"
+    parent = "get-involved"
+    weight = 2
+
 [[menu.main]]
     name = "Newsletter"
     url = "/newsletter/"
     parent = "get-involved"
-    weight = 1
+    weight = 3
 
   [[menu.main]]
     name = "Donate"
     url = "/donate/"
     parent = "get-involved"
-    weight = 2
+    weight = 4
 
 [markup]
   [markup.goldmark]

@@ -191,6 +191,7 @@ body::after {
     background-repeat: no-repeat, no-repeat, repeat;
     opacity: 0.32;
     z-index: 0;
+    pointer-events: none;
 }
 
 .home-card::after {
@@ -220,7 +221,11 @@ a:hover { color: var(--primary-color); text-decoration: underline; }
 
 /* Header */
 .site-header {
-    background: var(--bg-color);
+    background: rgba(255,255,255,0.96);
+    background-image: linear-gradient(90deg, rgba(8,73,60,0.08), rgba(7,61,51,0)),
+                      url("/images/nature-texture.svg");
+    background-repeat: no-repeat, repeat;
+    background-size: 100% 180%, 320px 320px;
     border-bottom: 1px solid var(--border-color);
     padding: 32px 0 1rem 0;
     position: fixed;
@@ -282,6 +287,20 @@ a:hover { color: var(--primary-color); text-decoration: underline; }
     cursor: default;
 }
 
+.nav-title {
+    display: block;
+    line-height: 1.2;
+}
+
+.nav-subtitle {
+    display: block;
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba(26, 26, 35, 0.6);
+    margin-top: 0.1rem;
+}
+
 .nav-item:hover > .nav-link,
 .nav-item:focus-within > .nav-link {
     color: var(--blue-hover);
@@ -316,7 +335,9 @@ a:hover { color: var(--primary-color); text-decoration: underline; }
     border: 1px solid rgba(0,0,0,0.05);
     box-shadow: var(--shadow-lg);
     border-radius: 12px;
-    width: 200px;
+    min-width: 200px;
+    width: max-content;
+    max-width: 340px;
     padding: 0.75rem 0;
     z-index: 1001;
     margin-top: 0;
@@ -362,6 +383,16 @@ a:hover { color: var(--primary-color); text-decoration: underline; }
     white-space: nowrap;
 }
 
+.dropdown-menu .nav-title {
+    font-weight: 600;
+}
+
+.dropdown-menu .nav-subtitle {
+    font-size: 0.72rem;
+    margin-top: 0.15rem;
+    color: rgba(26, 26, 35, 0.65);
+}
+
 .dropdown-menu a:hover {
     background: linear-gradient(120deg, var(--primary-color), var(--secondary-color));
     color: #fff;
@@ -390,6 +421,11 @@ a:hover { color: var(--primary-color); text-decoration: underline; }
 /* Hero */
 .home .hero {
     color: var(--deep-ocean);
+    background: linear-gradient(120deg, rgba(255,255,255,0.94) 0%, rgba(255,255,255,0.9) 55%, rgba(8,73,60,0.15) 100%),
+                url("/images/policy/amazon.jpg") center/cover no-repeat;
+    border: 1px solid rgba(15, 47, 63, 0.08);
+    box-shadow: var(--card-shadow);
+    position: relative;
 }
 
 .hero-layout {
@@ -472,6 +508,21 @@ a:hover { color: var(--primary-color); text-decoration: underline; }
     z-index: 1;
 }
 
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(255,255,255,0.7), rgba(255,255,255,0.4));
+    pointer-events: none;
+    z-index: 0;
+}
+
+.hero .container,
+.hero .hero-content {
+    position: relative;
+    z-index: 1;
+}
+
 /* Info Sections */
 .info-section {
     background: rgba(255,255,255,0.98);
@@ -492,7 +543,7 @@ a:hover { color: var(--primary-color); text-decoration: underline; }
 
 .info-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2.5rem;
 }
 
@@ -508,6 +559,71 @@ a:hover { color: var(--primary-color); text-decoration: underline; }
 
 .info-block--diagram {
     text-align: center;
+}
+
+/* Reward Channels */
+.reward-channels {
+    margin: 2rem 0 0;
+}
+
+.reward-channels ol {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+}
+
+.reward-channels li {
+    position: relative;
+    padding: 1.5rem 1.5rem 1.25rem;
+    border-radius: 14px;
+    overflow: hidden;
+    background: rgba(255,255,255,0.92);
+    border: 1px solid rgba(15, 47, 63, 0.08);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.06);
+    backdrop-filter: blur(4px);
+}
+
+.reward-channels li::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(145deg, rgba(7, 61, 51, 0.35), rgba(12, 94, 117, 0.15));
+    mix-blend-mode: multiply;
+    opacity: 0.9;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.reward-channels li::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("/images/nature-texture.svg");
+    background-size: 320px 320px;
+    background-position: center;
+    opacity: 0.22;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.reward-channels strong,
+.reward-channels span {
+    position: relative;
+    z-index: 1;
+    color: var(--deep-ocean);
+}
+
+.reward-channels strong {
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 0.35rem;
+}
+
+.reward-channels span {
+    color: rgba(10,34,52,0.9);
+    line-height: 1.5;
 }
 
 .cycle-diagram {
@@ -632,6 +748,7 @@ section.home-card {
     border: 1px solid rgba(15, 47, 63, 0.08);
     box-shadow: var(--card-shadow);
     overflow: hidden;
+    position: relative;
 }
 
 main > section:first-of-type.home-card {
@@ -760,6 +877,70 @@ main > section:first-of-type.home-card {
 
 .persona-card li {
     margin-bottom: 0.35rem;
+}
+
+.substack-card {
+    background: rgba(255,255,255,0.96);
+    border-radius: var(--card-radius);
+    padding: 2.5rem 0;
+    margin: 2rem 0;
+    box-shadow: 0 24px 80px rgba(4, 36, 92, 0.12);
+    position: relative;
+    overflow: hidden;
+}
+
+.substack-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 10% 20%, rgba(23, 101, 169, 0.12), transparent 45%),
+                radial-gradient(circle at 80% 10%, rgba(32, 199, 202, 0.12), transparent 45%),
+                radial-gradient(circle at 75% 80%, rgba(4, 36, 92, 0.16), transparent 55%);
+    opacity: 0.75;
+    z-index: 0;
+}
+
+.substack-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.substack-copy h2 {
+    margin-bottom: 0.6rem;
+}
+
+.substack-posts {
+    background: rgba(255,255,255,0.9);
+    border-radius: 18px;
+    border: 1px solid rgba(23, 101, 169, 0.12);
+    padding: 1.25rem;
+    box-shadow: 0 12px 32px rgba(4, 36, 92, 0.08);
+    min-height: 200px;
+}
+
+.substack-post-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.substack-post h3 {
+    margin: 0 0 0.35rem 0;
+    font-size: 1.05rem;
+}
+
+.substack-post p {
+    margin: 0;
+    color: rgba(3, 27, 44, 0.75);
+}
+
+.substack-fallback {
+    display: grid;
+    gap: 0.6rem;
+    align-items: flex-start;
 }
 
 .policy-announcement,
@@ -1774,6 +1955,10 @@ main > section:first-of-type.home-card {
     }
 
     .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .substack-grid {
         grid-template-columns: 1fr;
     }
 }

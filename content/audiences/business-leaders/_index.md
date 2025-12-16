@@ -52,7 +52,7 @@ The carbon reward transforms enterprise climate action into an investable, debt-
   <ul>
     <li>Mitigate-and-trade structure rather than cap-and-trade</li>
     <li>Carbon Exchange Authority oversees third-party MRV, milestones, and clawbacks</li>
-    <li>Central bank alliance uses CQE to maintain the XCR price floor</li>
+    <li>A proposed central bank alliance would use CQE to maintain the XCR price floor</li>
     <li>100-year contracts create predictable, debt-free cash flows</li>
   </ul>
 </div>

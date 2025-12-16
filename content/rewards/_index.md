@@ -5,20 +5,22 @@ description: "Learn about the carbon reward (XCR) financial instrument and polic
 
 ## Carbon Rewards
 
-The carbon reward (XCR) is a new type of financial instrument designed to mobilize climate action globally. This innovative mechanism serves multiple purposes: economic stimulus, ecosystem service payments, and long-term investment—all while avoiding carbon offsetting entirely.
+Looking for detail? Start with the [Introduction](/rewards/introduction/) for a deeper walkthrough.
+
+{{< reward-identity >}}
 
 ### Key Features
 
 The XCR represents a fundamental shift in how we finance climate mitigation:
 
-- **Digital Asset Structure** - Traded in foreign exchange markets and backed by central banks
+- **Digital Asset Structure** - Designed for foreign exchange markets with a proposed central bank alliance to support the price floor
 - **Debt-Free Issuance** - Created without government debt obligations
 - **Performance-Based** - Rewards actual emissions reductions and carbon removal
 - **Co-Benefits Focus** - Incentivizes community wellbeing and ecosystem health
 
-### Important Distinction
+### Reward Channels
 
-The carbon reward differs from traditional carbon markets: it is tradable but **not a carbon credit** and **cannot be used to offset emissions**. Instead, it rewards mitigation at the source and atmospheric carbon removal.
+{{< reward-channels >}}
 
 ---
 

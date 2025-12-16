@@ -20,4 +20,4 @@ The goal involves aligning governments, markets, and citizens toward collaborati
 
 ### 3. Rebalance
 
-The vision seeks to restructure the economy by creating negative feedback on carbon emissions via carbon rewards. This involves implementing a carbon currency system, expanding central bank mandates, and adopting a new social principle for equitable cost distribution.
+The vision seeks to restructure the economy by creating negative feedback on carbon emissions via carbon rewards. This involves implementing an XCR market steered by a Carbon Exchange Authority, coordinating with a central bank alliance to defend a price floor, and adopting a new social principle for equitable cost distribution.

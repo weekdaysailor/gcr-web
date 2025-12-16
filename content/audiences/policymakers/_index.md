@@ -30,8 +30,8 @@ The Global Carbon Reward supplies policymakers with a treaty-ready incentive tha
   <article class="pathway-card">
     <h4>Central Bank Role</h4>
     <ul>
-      <li>Mandates add climate risk alongside price stability</li>
-      <li>CQE interventions defend the XCR price floor</li>
+      <li>Mandates would add climate risk alongside price stability</li>
+      <li>CQE interventions would defend the XCR price floor</li>
       <li>Liquidity operations minimize FX volatility</li>
     </ul>
   </article>
